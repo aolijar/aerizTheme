@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.1.0' );
+	define( '_S_VERSION', '1.0.1' );
 }
 
 /**
@@ -188,11 +188,11 @@ function automatic_GitHub_updates($data) {
   $repo = 'aerizTheme'; // Repository name as it appears in the URL
   // Get the latest release tag from the repository. The User-Agent header must be sent, as per
   // GitHub's API documentation: https://developer.github.com/v3/#user-agent-required
-  $file = @json_decode(@file_get_contents('https://api.github.com/repos/'.$user.'/'.$repo.'/releases/latest', false,
+  $file = @json_decode(@file_get_contents('https://api.github.com/repos/aolijar/aerizTheme/releases', false,
       stream_context_create(['http' => ['header' => "User-Agent: ".$user."\r\n"]])
   ));
   if($file) {
-	$update = filter_var($file->tag_name, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+	$update = filter_var($file[0]->tag_name, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
     // Only return a response if the new version number is higher than the current version
     if($update > $current) {
   	  $data->response[$theme] = array(
@@ -200,8 +200,8 @@ function automatic_GitHub_updates($data) {
 	      // Strip the version number of any non-alpha characters (excluding the period)
 	      // This way you can still use tags like v1.1 or ver1.1 if desired
 	      'new_version' => $update,
-	      'url'         => 'https://github.com/'.$user.'/'.$repo,
-	      'package'     => $file->assets[0]->browser_download_url,
+	      'url'         => 'https://api.github.com/repos/aolijar/aerizTheme/releases',
+	      'package'     => $file[0]->assets[0]->browser_download_url,
       );
     }
   }
