@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Aeriz
 Author URI: http://Aeriz.com
 Description: Description
-Version: 1.0.3
+Version: 1.0.4
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -180,10 +180,10 @@ a:hover, a:active {
   border: 2px solid #9d9fa2;
   color: #9d9fa2;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 0.88rem;
   display: flex;
   align-items: center;
-  padding: 7.5px 20px;
+  padding: 5px 20px;
   border-radius: 70px;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
@@ -191,7 +191,7 @@ a:hover, a:active {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  transition: translate ease 250ms;
+  transition: all ease 150ms;
   white-space: nowrap;
 }
 
@@ -246,7 +246,7 @@ a:hover, a:active {
   border: 2px solid #9d9fa2;
   color: #9d9fa2;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 0.88rem;
   display: flex;
   align-items: center;
   padding: 5px 7.5px 5px 20px;
@@ -303,8 +303,6 @@ a:hover, a:active {
 .btn-default:hover {
   cursor: pointer;
   box-shadow: 2px 2px 1.5px rgba(67, 67, 67, 0.25), inset 2px 2px 2.5px rgba(67, 67, 67, 0.5);
-  transform: translate(-0.5px, -0.5px);
-  transition: all ease 500ms;
 }
 
 .btn-w-arrow:hover .btn-arrow:after {
@@ -315,6 +313,10 @@ a:hover, a:active {
 .btn-w-arrow:hover .btn-arrow:before {
   transition: all ease 500ms;
   left: 50%;
+}
+
+.header-shop-btn {
+  margin-right: 75px;
 }
 
 input[type=text],
@@ -375,7 +377,7 @@ header {
   align-items: center;
   justify-content: space-between;
   height: 64px;
-  padding: 0px 100px;
+  padding: 0px 75px;
   position: fixed;
   top: 0;
   left: 0;
@@ -387,23 +389,8 @@ header {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 }
-header:hover .hamburger-one {
-  top: 85%;
-  transform: translateY(-85%);
-  left: 10.333%;
-  border-radius: 10px;
-}
-header:hover .hamburger-two {
-  top: 50%;
-  transform: translateY(-50%);
-  left: 33.333%;
-  border-radius: 10px;
-}
-header:hover .hamburger-three {
-  top: 15%;
-  transform: translateY(-15%);
-  left: 56.333%;
-  border-radius: 10px;
+header:hover .rotate-box {
+  transform: rotateX(0deg) translateZ(5px);
 }
 
 .site-nav-container {
@@ -418,32 +405,31 @@ header:hover .hamburger-three {
   position: relative;
 }
 
-.header-shop-btn {
-  margin-right: 112px;
-}
-
 .menu-toggle-btn {
   height: 25px;
   width: 86px;
   cursor: pointer;
 }
-.menu-toggle-btn:hover .hamburger-one {
-  top: 100%;
-  transform: translateY(-100%);
-  left: 10.333%;
-  border-radius: 10px;
+.menu-toggle-btn .rotate-fluid-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  font-weight: bolder;
+  font-size: 60%;
+  height: 50%;
+  width: 50%;
 }
-.menu-toggle-btn:hover .hamburger-two {
-  top: 50%;
-  transform: translateY(-50%);
-  left: 33.333%;
-  border-radius: 10px;
-}
-.menu-toggle-btn:hover .hamburger-three {
-  top: 0%;
-  transform: translateY(0%);
-  left: 56.333%;
-  border-radius: 10px;
+.menu-toggle-btn .rotate-box {
+  width: fit-content;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: rotateX(-90deg) translateZ(5px);
+  transform: rotateX(-90deg) translateZ(5px);
+  transition: all ease-out 150ms;
+  will-change: transform;
 }
 
 .hamburger {
@@ -674,6 +660,23 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+**/
+html {
+  line-height: 1;
+}
+
+.section_default {
+  height: 100vh;
+  min-height: fit-content;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 50px;
+}
+
 .alt-text {
   font-family: "KormelinkItalic";
   font-feature-settings: "swsh";
@@ -681,46 +684,21 @@ body {
   color: #464547;
 }
 
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
-html {
-  line-height: 1;
-  overflow-x: hidden;
-}
-
-/* Sections
-	 ========================================================================== */
-/* MOVIE SCROLL HERO */
-.grid-wrapper {
-  position: relative;
-  height: 500vh;
-  max-height: 500vh;
-  width: 100%;
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr;
-}
-
+/* HOME PAGE Sections ========================================================================== */
+/* MOVIE SCROLL */
 .main_sections-wrapper {
   position: relative;
-  height: 100%;
-  max-height: 100%;
-  min-height: 100%;
+}
+
+.grid-wrapper {
+  position: relative;
+  height: 5000px;
+  max-height: 5000px;
+  min-height: 5000px;
   width: 100%;
-  max-width: 100%;
-  min-width: 100%;
-  display: grid;
-  grid-row-start: 1;
-  grid-column-start: 1;
 }
 
-.section_content-container {
-  z-index: 3;
-}
-
-.section_content-container {
+.section_scroll-content-container {
   position: sticky;
   top: 0;
   left: 0;
@@ -728,7 +706,6 @@ html {
   bottom: 0;
   height: 100vh;
   width: 100vw;
-  color: #000;
   display: grid;
   grid-template-columns: repeat(12, minmax(calc(8.33333% - 5px), 1fr));
   grid-template-rows: repeat(12, minmax(calc(8.33333% - 5px), 1fr));
@@ -750,9 +727,7 @@ html {
   grid-column: 1/12;
   justify-self: center;
   align-self: center;
-  /* border: 5px solid blue; */
   z-index: 2;
-  display: grid;
 }
 
 .canvas {
@@ -761,10 +736,10 @@ html {
   width: auto;
   max-width: 100%;
   margin: 0 auto;
-  justify-self: center;
 }
 
-/* MOVIE SCROLL HERO END */
+/* ========================================================================== */
+/* PRODUCTS SECTION */
 /* Grouping content
 	 ========================================================================== */
 /**

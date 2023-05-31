@@ -2,10 +2,10 @@
   border: 2px solid #9d9fa2;
   color: $color__text-main;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 0.88rem;
   display: flex;
   align-items: center;
-  padding: 7.5px 20px;
+  padding: 5px 20px;
   border-radius: 70px;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
@@ -13,7 +13,7 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
-  transition: translate ease 250ms;
+  transition: all ease 150ms;
   white-space: nowrap;
 }
 
@@ -68,7 +68,7 @@
   border: 2px solid #9d9fa2;
   color: #9d9fa2;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 0.88rem;
   display: flex;
   align-items: center;
   padding: 5px 7.5px 5px 20px;
@@ -124,8 +124,7 @@
   cursor: pointer;
   box-shadow: 2px 2px 1.5px rgba(67, 67, 67, 0.25),
     inset 2px 2px 2.5px rgba(67, 67, 67, 0.5);
-  transform: translate(-0.5px, -0.5px);
-  transition: all ease 500ms;
+  // transform: translate(-0.5px, -0.5px);
 }
 
 .btn-w-arrow:hover .btn-arrow:after {
@@ -135,4 +134,8 @@
 .btn-w-arrow:hover .btn-arrow:before {
   transition: all ease 500ms;
   left: 50%;
+}
+
+.header-shop-btn {
+  margin-right: 75px;
 }

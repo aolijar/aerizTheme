@@ -10,7 +10,6 @@ const FrameUnpacker = (() => {
     // download each frame image and prep it up
     for (let index = start; index <= end; index++) {
       const id = index.toString().padStart(padding, "0"); // THIS SETS PADDING # - COULD BE ADJUSTED
-      // var test = "../scrollVideoAssets/RootsHomepage_{{id}}.png"
       const url = urlPattern.replace("{{id}}", id);
       calls.push(
         fetch(url).then((res) =>
@@ -97,7 +96,6 @@ const FrameUnpacker = (() => {
   ); //NEED TO PASS IN CONTAINER OF CANVAS/CANVAS DIRECT PARENT
   observable.subscribe(observer);
   // console.log(frames);
-  // scrollIt();
   // SCROLL DOWN A BIT FOR MOVIE TO PLAY
 })();
 

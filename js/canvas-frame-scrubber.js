@@ -3,6 +3,13 @@ const CanvasFrameScrubber = (() => {
     const observer = {
       next: (percentage) => {
         var frameIndex = Math.floor((percentage * (frames.length - 1)) / 100);
+
+        //------------------------------
+        // ENSURES FRAMES/PERCENTAGE WON'T GO NEGATIVE AND ERROR
+        if (frameIndex <= 0) frameIndex = 0;
+        if (percentage >= 100) percentage = 100;
+        // ENSURES VIDEO TRIGGER WON'T PLAY PAST CERTANIN POINT
+        if (frameIndex >= frames.length) frameIndex = frames.length;
         // THIS WILL SET DATA AVAILBE TO THE DOM THAT CAN BE PULLED ELSEWHERE
         document
           .getElementById("canvas-container")
@@ -10,14 +17,9 @@ const CanvasFrameScrubber = (() => {
         document
           .getElementById("canvas-container")
           .setAttribute("data-frame", frameIndex);
-        //------------------------------
-        // ENSURES FRAMES WON'T GO NEGATIVE AND ERROR
-        if (frameIndex <= 0) frameIndex = 0;
-        // ENSURES VIDEO TRIGGER WON'T PLAY PAST CERTANIN POINT
-        if (frameIndex >= frames.length) return;
         //
         //
-        console.log(percentage, "PERCENTAGE", frameIndex, "FRAME");
+        // console.log(percentage, "PERCENTAGE", frameIndex, "FRAME");
         //
         //
         // BUILDS NEWS FRAMES---------------

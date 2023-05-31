@@ -3,7 +3,7 @@ header {
   align-items: center;
   justify-content: space-between;
   height: 64px;
-  padding: 0px 100px;
+  padding: 0px 75px;
   position: fixed;
   top: 0;
   left: 0;
@@ -15,26 +15,31 @@ header {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 
-  &:hover .hamburger-one {
-    top: 85%;
-    // transform: translateY(-100%) rotate(360deg);
-    transform: translateY(-85%);
-    left: 10.333%;
-    border-radius: 10px;
+  &:hover .rotate-box {
+    transform: rotateX(0deg) translateZ(5px);
   }
-  &:hover .hamburger-two {
-    top: 50%;
-    transform: translateY(-50%);
-    left: 33.333%;
-    border-radius: 10px;
-  }
-  &:hover .hamburger-three {
-    top: 15%;
-    // transform: translateY(0%) rotate(-360deg);
-    transform: translateY(-15%);
-    left: 56.333%;
-    border-radius: 10px;
-  }
+
+  // // ONE VERSION ONLY
+  // &:hover .hamburger-one {
+  //   top: 85%;
+  //   // transform: translateY(-100%) rotate(360deg);
+  //   transform: translateY(-85%);
+  //   left: 10.333%;
+  //   border-radius: 10px;
+  // }
+  // &:hover .hamburger-two {
+  //   top: 50%;
+  //   transform: translateY(-50%);
+  //   left: 33.333%;
+  //   border-radius: 10px;
+  // }
+  // &:hover .hamburger-three {
+  //   top: 15%;
+  //   // transform: translateY(0%) rotate(-360deg);
+  //   transform: translateY(-15%);
+  //   left: 56.333%;
+  //   border-radius: 10px;
+  // }
 }
 
 .site-nav-container {
@@ -52,35 +57,54 @@ header {
 .site-branding {
 }
 
-.header-shop-btn {
-  margin-right: 112px;
-}
-
 .menu-toggle-btn {
   height: 25px;
   width: 86px;
   cursor: pointer;
 
-  &:hover .hamburger-one {
-    top: 100%;
-    // transform: translateY(-100%) rotate(360deg);
-    transform: translateY(-100%);
-    left: 10.333%;
-    border-radius: 10px;
+  .rotate-fluid-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    font-weight: bolder;
+    font-size: 60%;
+    height: 50%;
+    width: 50%;
   }
-  &:hover .hamburger-two {
-    top: 50%;
-    transform: translateY(-50%);
-    left: 33.333%;
-    border-radius: 10px;
+
+  .rotate-box {
+    width: fit-content;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: rotateX(-90deg) translateZ(5px);
+    transform: rotateX(-90deg) translateZ(5px);
+    transition: all ease-out 150ms;
+    will-change: transform;
   }
-  &:hover .hamburger-three {
-    top: 0%;
-    // transform: translateY(0%) rotate(-360deg);
-    transform: translateY(0%);
-    left: 56.333%;
-    border-radius: 10px;
-  }
+
+  // &:hover .hamburger-one {
+  //   top: 100%;
+  //   // transform: translateY(-100%) rotate(360deg);
+  //   transform: translateY(-100%);
+  //   left: 10.333%;
+  //   border-radius: 10px;
+  // }
+  // &:hover .hamburger-two {
+  //   top: 50%;
+  //   transform: translateY(-50%);
+  //   left: 33.333%;
+  //   border-radius: 10px;
+  // }
+  // &:hover .hamburger-three {
+  //   top: 0%;
+  //   // transform: translateY(0%) rotate(-360deg);
+  //   transform: translateY(0%);
+  //   left: 56.333%;
+  //   border-radius: 10px;
+  // }
 }
 
 .hamburger {

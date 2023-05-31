@@ -7,13 +7,12 @@ Template Post Type: page
 
 ?>
 <?php get_header(); ?>
-     <!---->
-     <div class="grid-wrapper">
+     <!---->   
       <!---->
       <main class="main_sections-wrapper">
         <!---->
-        <!-- <img class='test-img' src="wp-content/uploads/2023/scrollVideoAssets/RootsHomepage_00000.png" alt=""> -->
-        <section class="section_content-container">
+        <div class="grid-wrapper">
+        <section class="section_scroll-content-container">
           <!--  -->
           <!-- <h3 data-trans="100" data-intro="90" class="hero-one fade-in">
             Text Intro One 25%
@@ -38,7 +37,6 @@ Template Post Type: page
             <input
               name="frames-url"
               type="hidden"
-              aria-hidden="true"
               value="wp-content/uploads/2023/scrollVideoAssets/RootsHomepage_{{id}}.png"
               data-frame-start="00000"
               data-frame-end="00630"
@@ -49,12 +47,27 @@ Template Post Type: page
             <!-- the padding thing is the format for fill #'s 000 001 002 etc etc'-->
           </div>
           <!---->
-          <!---->
+        </section>
+        </div>
+        <!---->
+        <section class="section_default section_main-products">
+          <p>PRODUCTS HERE</p>
+        </section>
+        <!---->
+        <section class="section_default section_main-ethos">
+          <p>ABOUT HERE</p>
+        </section>
+        <!---->
+        <section class="section_default section_main-picutres">
+          <p>PICTURES HERE</p>
+        </section>
+        <!---->
+        <section class="section_default section_main-blog">
+          <p>BLOG HERE</p>
         </section>
         <!---->
       </main>
       <!---->
-    </div>
     <!---->
 <?php 
 get_footer();

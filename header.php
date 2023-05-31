@@ -26,32 +26,33 @@
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$aeriz_description = get_bloginfo( 'description', 'display' );
-			if ( $aeriz_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $aeriz_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
+			<?php the_custom_logo();?>
 		</div><!-- .site-branding -->
 		<div class="site-nav-container">
-		<a class="btn-default btn header-shop-btn btn-w-holographic btn-w-holographic-w-overlay" href="" target="_self">shop our cannabis</a>
+		<a class="btn-default header-shop-btn btn-w-holographic btn-w-holographic-w-overlay" href="" target="_self">shop our cannabis</a>
 
 		<nav id="site-navigation" class="main-navigation">
 			<div role="button" aria-label="Open Navigation Menu" aria-pressed="false" class="menu-toggle-btn" id="menu-toggle-btn">
+			<!---->
+			<div class="rotate-fluid-container">
+					<div class="rotate-box" style="transition-delay: 50ms">
+					<span>M</span>
+					</div>
+					<div class="rotate-box" style="transition-delay: 80ms">
+					<span>E</span>
+					</div>
+					<div class="rotate-box" style="transition-delay: 110ms">
+					<span>N</span>
+					</div>
+					<div class="rotate-box" style="transition-delay: 140ms">
+					<span>U</span>
+				</div>
+				<!---->
 				<div aria-hidden="true" class="hamburger hamburger-one"></div>
-				<div aria-hidden="true" class="hamburger hamburger-two"></div>
-				<div aria-hidden="true" class="hamburger hamburger-three"></div>
-			</div>
+					<div aria-hidden="true" class="hamburger hamburger-two"></div>
+					<div aria-hidden="true" class="hamburger hamburger-three"></div>
+				</div>
+			<!--NAV-->
 			<div>
 			<!-- <?php
 			wp_nav_menu(
