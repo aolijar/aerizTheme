@@ -24,7 +24,6 @@ body {
   font-weight: 350;
   color: $color__text-alt;
 }
-
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -34,14 +33,17 @@ html {
   line-height: 1;
   overflow-x: hidden;
 }
-
+// body {
+//   display: grid;
+//   grid-row-start: 1;
+//   grid-column-start: 1;
+// }
 /* Sections
 	 ========================================================================== */
 
 /* MOVIE SCROLL HERO */
 .grid-wrapper {
   position: relative;
-  top: -64px;
   height: 500vh;
   max-height: 500vh;
   width: 100%;
