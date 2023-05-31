@@ -138,10 +138,16 @@ add_action( 'widgets_init', 'aeriz_widgets_init' );
  * Enqueue scripts and styles.
  */
 function aeriz_scripts() {
+
+	$prod = _S_VERSION;
+	$dev = time();
+	$version = $dev;
+
 	wp_enqueue_style( 'aeriz-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'aeriz-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'aeriz-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'global', get_template_directory_uri() . '/js/global.js', array(), $dev, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

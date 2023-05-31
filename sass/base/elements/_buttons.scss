@@ -1,21 +1,137 @@
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	border: 1px solid;
-	border-color: $color__border-button;
-	border-radius: 3px;
-	background: $color__background-button;
-	color: rgba(0, 0, 0, 0.8);
-	line-height: 1;
-	padding: 0.6em 1em 0.4em;
+.btn-default {
+  border: 2px solid #9d9fa2;
+  color: $color__text-main;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  padding: 7.5px 20px;
+  border-radius: 70px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: translate ease 250ms;
+}
 
-	&:hover {
-		border-color: $color__border-button-hover;
-	}
+.btn-w-holographic::after {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  clip-path: circle(0%);
+  width: 500px;
+  height: 500px;
+  background-image: url("http://localhost/aeriz2023/wp-content/uploads/2023/05/holographic.jpeg");
+  background-size: contain;
+  top: var(--btnFillTop, "0px");
+  left: var(--btnFillLeft, "0px");
+  transform: translate(-50%, -50%);
+  transition: none;
+  z-index: -2;
+}
 
-	&:active,
-	&:focus {
-		border-color: $color__border-button-focus;
-	}
+.btn-w-holographic:hover {
+  color: #fff;
+  text-shadow: 0px 0px 1px #434343;
+}
+
+.btn-w-holographic:hover::after {
+  clip-path: circle(50%);
+  transition: clip-path ease 500ms;
+}
+
+.btn-w-holographic-w-overlay::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #9d9fa2;
+  transition: none;
+  opacity: 0;
+  z-index: -1;
+}
+
+.btn-w-holographic-w-overlay:hover:before {
+  opacity: 0.5;
+  transition: opacity ease 750ms;
+  transition-delay: 250ms;
+}
+
+.btn-w-arrow {
+  border: 2px solid #9d9fa2;
+  color: #9d9fa2;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  padding: 5px 7.5px 5px 20px;
+  border-radius: 70px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
+.btn-arrow {
+  width: 25px;
+  height: 25px;
+  background-color: #9d9fa2;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  margin-left: 14px;
+}
+
+.btn-arrow:after {
+  position: absolute;
+  content: "";
+  background-image: url("right-arrow.png");
+  background-size: cover;
+  width: 15px;
+  height: 15px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: none;
+}
+.btn-arrow:before {
+  position: absolute;
+  content: "";
+  background-image: url("right-arrow.png");
+  background-size: cover;
+  width: 15px;
+  height: 15px;
+  left: -50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all ease 250ms;
+  transition: none;
+}
+
+.btn-w-arrow:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 1.5px rgba(67, 67, 67, 0.5);
+  transform: translate(-0.5px, -0.5px);
+  transition: all ease 250ms;
+}
+.btn-default:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 1.5px rgba(67, 67, 67, 0.25),
+    inset 2px 2px 2.5px rgba(67, 67, 67, 0.5);
+  transform: translate(-0.5px, -0.5px);
+  transition: all ease 500ms;
+}
+
+.btn-w-arrow:hover .btn-arrow:after {
+  transform: translate(100%, -50%);
+  transition: transform ease 250ms;
+}
+.btn-w-arrow:hover .btn-arrow:before {
+  transition: all ease 500ms;
+  left: 50%;
 }

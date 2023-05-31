@@ -15,8 +15,6 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
-
 	<?php wp_head(); ?>
 </head>
 
@@ -44,10 +42,17 @@
 				<p class="site-description"><?php echo $aeriz_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
+		<div class="site-nav-container">
+		<a class="btn-default btn header-shop-btn btn-w-holographic btn-w-holographic-w-overlay" href="" target="_self">shop our cannabis</a>
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'aeriz' ); ?></button>
-			<?php
+			<div role="button" aria-label="Open Navigation Menu" aria-pressed="false" class="menu-toggle-btn" id="menu-toggle-btn">
+				<div aria-hidden="true" class="hamburger hamburger-one"></div>
+				<div aria-hidden="true" class="hamburger hamburger-two"></div>
+				<div aria-hidden="true" class="hamburger hamburger-three"></div>
+			</div>
+			<div>
+			<!-- <?php
 			wp_nav_menu(
 				array(
 					'theme_location' => 'menu-1',
@@ -55,5 +60,7 @@
 				)
 			);
 			?>
+			</div> -->
 		</nav><!-- #site-navigation -->
+		<div>
 	</header><!-- #masthead -->
