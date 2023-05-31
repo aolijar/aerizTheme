@@ -32,17 +32,86 @@ body {
 
 html {
   line-height: 1;
+  overflow-x: hidden;
 }
 
 /* Sections
 	 ========================================================================== */
-/**
- * Render the `main` element consistently in IE.
- */
 
-main {
-  display: block;
+/* MOVIE SCROLL HERO */
+.grid-wrapper {
+  position: relative;
+  top: -64px;
+  height: 500vh;
+  max-height: 500vh;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
 }
+
+.main_sections-wrapper {
+  position: relative;
+  height: 100%;
+  max-height: 100%;
+  min-height: 100%;
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  display: grid;
+  grid-row-start: 1;
+  grid-column-start: 1;
+}
+
+.section_content-container {
+  z-index: 3; // THIS IS TO HAVE OTHER TEXT IN AND AROUND SCROLL MOVIE
+}
+
+.section_content-container {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  color: #000;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(calc(8.33333% - 5px), 1fr));
+  grid-template-rows: repeat(12, minmax(calc(8.33333% - 5px), 1fr));
+  gap: 5px;
+  overflow-x: hidden;
+}
+
+.canvas-container {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  max-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  grid-row: 1/12;
+  grid-column: 1/12;
+  justify-self: center;
+  align-self: center;
+  /* border: 5px solid blue; */
+  z-index: 2;
+  display: grid;
+}
+
+.canvas {
+  height: 100%;
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  justify-self: center;
+}
+/* MOVIE SCROLL HERO END */
+
 /* Grouping content
 	 ========================================================================== */
 

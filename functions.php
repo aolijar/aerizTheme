@@ -71,16 +71,16 @@ function aeriz_setup() {
 	);
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support(
-		'custom-background',
-		apply_filters(
-			'aeriz_custom_background_args',
-			array(
-				'default-color' => 'ffffff',
-				'default-image' => '',
-			)
-		)
-	);
+	// add_theme_support(
+	// 	'custom-background',
+	// 	apply_filters(
+	// 		'aeriz_custom_background_args',
+	// 		array(
+	// 			'default-color' => 'ffffff',
+	// 			'default-image' => '',
+	// 		)
+	// 	)
+	// );
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
@@ -146,8 +146,11 @@ function aeriz_scripts() {
 	wp_enqueue_style( 'aeriz-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'aeriz-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'aeriz-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	// wp_enqueue_script( 'aeriz-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'global', get_template_directory_uri() . '/js/global.js', array(), $dev, true );
+	wp_enqueue_script( 'scroll-observe', get_template_directory_uri() . '/js/scroll-observable.js', array(), $dev, true );
+	wp_enqueue_script( 'frame-scrubber', get_template_directory_uri() . '/js/canvas-frame-scrubber.js', array(), $dev, true );
+	wp_enqueue_script( 'main-scroll', get_template_directory_uri() . '/js/main.js', array(), $dev, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -173,14 +176,14 @@ require get_template_directory() . '/inc/template-functions.php';
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+// require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Load Jetpack compatibility file.
  */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
+// if ( defined( 'JETPACK__VERSION' ) ) {
+// 	require get_template_directory() . '/inc/jetpack.php';
+// }
 
 
 // Automatic theme updates from the GitHub repository

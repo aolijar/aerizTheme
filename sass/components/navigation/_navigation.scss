@@ -4,6 +4,9 @@ header {
   justify-content: space-between;
   height: 64px;
   padding: 0px 189px;
+  position: sticky;
+  top: 0;
+  background-color: transparent;
 
   &:hover .hamburger-one {
     top: 85%;
