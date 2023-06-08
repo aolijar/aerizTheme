@@ -14,7 +14,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, minimum-scale=1">
 	<?php wp_head(); ?>
 </head>
 
@@ -24,45 +24,34 @@
 <div id="page" class="site">
 	<!-- <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'aeriz' ); ?></a> -->
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php the_custom_logo();?>
-		</div><!-- .site-branding -->
-		<div class="site-nav-container">
-		<a class="btn-default header-shop-btn btn-w-holographic btn-w-holographic-w-overlay" href="" target="_self">shop our cannabis</a>
-
-		<nav id="site-navigation" class="main-navigation">
-			<div role="button" aria-label="Open Navigation Menu" aria-pressed="false" class="menu-toggle-btn" id="menu-toggle-btn">
-			<!---->
-			<div class="rotate-fluid-container">
-					<div class="rotate-box" style="transition-delay: 50ms">
-					<span>M</span>
+	<header id="masthead" class="site_header header">
+		<div class="header_content-container">
+			<div class="site_branding">
+				<a href="http://localhost/aeriz2023/" class="" rel="home" aria-label="Go To The Homepage" <?php if (is_page_template( 'page-home.php' )):?>aria-current="page"<?php endif?>>
+					<img src="http://localhost/aeriz2023/wp-content/uploads/2023/06/Aeriz_Logo.svg" alt="Aeriz Logo">
+				</a>
+			</div>
+			<!-- .site-branding -->
+			<div class="site_nav-container">
+					<a class="btn_default btn_shop btn_w-holographic btn_w-holographic-w-overlay" href="" target="_self">shop our cannabis</a>
+					<div tabindex="0" role="button" aria-label="Toggle Navigation Menu" aria-pressed="false" aria-haspopup="true" class="nav_toggle-btn hamburger_text" id="navigation_toggle-btn">
+							MENU
+							<div aria-hidden="true" class="hamburger_container">
+								<div  class="hamburger hamburger_one"></div>
+								<div  class="hamburger hamburger_two"></div>
+								<div  class="hamburger hamburger_three"></div>
+							</div>
 					</div>
-					<div class="rotate-box" style="transition-delay: 80ms">
-					<span>E</span>
-					</div>
-					<div class="rotate-box" style="transition-delay: 110ms">
-					<span>N</span>
-					</div>
-					<div class="rotate-box" style="transition-delay: 140ms">
-					<span>U</span>
-				</div>
-				<!---->
-				<div aria-hidden="true" class="hamburger hamburger-one"></div>
-					<div aria-hidden="true" class="hamburger hamburger-two"></div>
-					<div aria-hidden="true" class="hamburger hamburger-three"></div>
-				</div>
-			<!--NAV-->
+					<nav id="site_navigation" class="nav">
+						<!-- <?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'menu-1',
+								'menu_id'        => 'primary-menu',
+							)
+						); 
+						?>-->
+					</nav><!-- #site-navigation -->
 			<div>
-			<!-- <?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-			</div> -->
-		</nav><!-- #site-navigation -->
-		<div>
+		</div>		
 	</header><!-- #masthead -->

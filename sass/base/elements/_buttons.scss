@@ -1,8 +1,8 @@
-.btn-default {
-  border: 2px solid #9d9fa2;
+.btn_default {
+  border: 2px solid $color__text-main;
   color: $color__text-main;
   font-weight: bold;
-  font-size: 0.88rem;
+  font-size: 1.6rem;
   display: flex;
   align-items: center;
   padding: 5px 20px;
@@ -17,7 +17,7 @@
   white-space: nowrap;
 }
 
-.btn-w-holographic::after {
+.btn_w-holographic::after {
   position: absolute;
   content: "";
   border-radius: 50%;
@@ -33,17 +33,17 @@
   z-index: -2;
 }
 
-.btn-w-holographic:hover {
+.btn_w-holographic:hover {
   color: #fff;
   text-shadow: 0px 0px 1px #434343;
 }
 
-.btn-w-holographic:hover::after {
+.btn_w-holographic:hover::after {
   clip-path: circle(50%);
   transition: clip-path ease 500ms;
 }
 
-.btn-w-holographic-w-overlay::before {
+.btn_w-holographic-w-overlay::before {
   position: absolute;
   content: "";
   width: 100%;
@@ -52,21 +52,21 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: #9d9fa2;
+  background-color: $color__text-main;
   transition: none;
   opacity: 0;
   z-index: -1;
 }
 
-.btn-w-holographic-w-overlay:hover:before {
+.btn_w-holographic-w-overlay:hover:before {
   opacity: 0.5;
   transition: opacity ease 750ms;
   transition-delay: 250ms;
 }
 
-.btn-w-arrow {
-  border: 2px solid #9d9fa2;
-  color: #9d9fa2;
+.btn_w-arrow {
+  border: 2px solid $color__text-main;
+  color: $color__text-main;
   font-weight: bold;
   font-size: 0.88rem;
   display: flex;
@@ -78,32 +78,32 @@
   background-color: transparent;
 }
 
-.btn-arrow {
+.btn_arrow {
   width: 25px;
   height: 25px;
-  background-color: #9d9fa2;
+  background-color: $color__text-main;
   border-radius: 50%;
   position: relative;
   overflow: hidden;
   margin-left: 14px;
 }
 
-.btn-arrow:after {
+.btn_arrow:after {
   position: absolute;
   content: "";
-  background-image: url("right-arrow.png");
+  background-image: url("http://localhost/aeriz2023/wp-content/uploads/2023/06/Arrow.png");
   background-size: cover;
-  width: 15px;
-  height: 15px;
+  width: 25px;
+  height: 25px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   transition: none;
 }
-.btn-arrow:before {
+.btn_arrow:before {
   position: absolute;
   content: "";
-  background-image: url("right-arrow.png");
+  background-image: url("http://localhost/aeriz2023/wp-content/uploads/2023/06/Arrow.png");
   background-size: cover;
   width: 15px;
   height: 15px;
@@ -114,28 +114,30 @@
   transition: none;
 }
 
-.btn-w-arrow:hover {
+.btn_w-arrow:hover {
   cursor: pointer;
   box-shadow: 2px 2px 1.5px rgba(67, 67, 67, 0.5);
-  transform: translate(-0.5px, -0.5px);
+  // transform: translate(-0.5px, -0.5px);
   transition: all ease 250ms;
 }
-.btn-default:hover {
+.btn_default:hover {
   cursor: pointer;
   box-shadow: 2px 2px 1.5px rgba(67, 67, 67, 0.25),
     inset 2px 2px 2.5px rgba(67, 67, 67, 0.5);
   // transform: translate(-0.5px, -0.5px);
 }
 
-.btn-w-arrow:hover .btn-arrow:after {
+.btn_w-arrow:hover .btn_arrow:after {
   transform: translate(100%, -50%);
   transition: transform ease 250ms;
 }
-.btn-w-arrow:hover .btn-arrow:before {
+.btn_w-arrow:hover .btn_arrow:before {
   transition: all ease 500ms;
   left: 50%;
 }
 
-.header-shop-btn {
+.btn_shop {
   margin-right: 75px;
+  text-align: center;
+  line-height: 20px;
 }

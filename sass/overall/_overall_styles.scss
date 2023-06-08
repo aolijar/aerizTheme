@@ -8,14 +8,20 @@
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // font-size: 62.5%;
   scroll-behavior: smooth;
   box-sizing: border-box;
 }
-
+.age-overlay-scroll {
+  overflow: hidden;
+}
 html,
 body {
   font-family: $font__main;
+  letter-spacing: $letter_spacing;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 /**
  * 1. Correct the line height in all browsers.
@@ -23,16 +29,21 @@ body {
 **/
 html {
   line-height: 1;
+  font-size: 62.5%;
+}
+main {
+  @include width-margin-set;
+  padding: 0px $main_padding;
 }
 // SECTION DEFAULTS -
 .section_default {
   height: 100vh;
   min-height: fit-content;
   width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 50px;
 }
+
+//
+
 //
 .alt-text {
   font-family: $font__alt_italic;
@@ -64,7 +75,7 @@ html {
   right: 0;
   bottom: 0;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(12, minmax(calc(8.33333% - 5px), 1fr));
   grid-template-rows: repeat(12, minmax(calc(8.33333% - 5px), 1fr));
@@ -87,6 +98,8 @@ html {
   justify-self: center;
   align-self: center;
   z-index: 2;
+  display: grid;
+  @include width-margin-set;
 }
 
 .canvas {
@@ -198,26 +211,20 @@ sub {
 sup {
   top: -0.5em;
 }
-
 /* Embedded content
 	 ========================================================================== */
-
 /**
  * Remove the border on images inside links in IE 10.
  */
-
 img {
   border-style: none;
 }
-
 /* Forms
 	 ========================================================================== */
-
 /**
  * 1. Change the font styles in all browsers.
  * 2. Remove the margin in Firefox and Safari.
  */
-
 button,
 input,
 optgroup,
@@ -228,42 +235,34 @@ textarea {
   line-height: 1.15;
   margin: 0;
 }
-
 /**
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
  */
-
 button,
 input {
   overflow: visible;
 }
-
 /**
  * Remove the inheritance of text transform in Edge, Firefox, and IE.
  * 1. Remove the inheritance of text transform in Firefox.
  */
-
 button,
 select {
   text-transform: none;
 }
-
 /**
  * Correct the inability to style clickable types in iOS and Safari.
  */
-
 button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button;
 }
-
 /**
  * Remove the inner border and padding in Firefox.
  */
-
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
@@ -271,22 +270,18 @@ button::-moz-focus-inner,
   border-style: none;
   padding: 0;
 }
-
 /**
  * Restore the focus styles unset by the previous rule.
  */
-
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
-
 /**
  * Correct the padding in Firefox.
  */
-
 fieldset {
   padding: 0.35em 0.75em 0.625em;
 }

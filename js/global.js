@@ -1,6 +1,6 @@
 // THIS SECTION IS FOR BUTTONS ONLY -------------------------
 
-const btn = document.querySelectorAll(".btn-default");
+const btn = document.querySelectorAll(".btn_default");
 
 btn.forEach((b) =>
   b.addEventListener("mouseenter", (e) => {
@@ -14,3 +14,11 @@ btn.forEach((b) =>
     b.style.setProperty("--btnFillLeft", `${x}px`);
   })
 );
+
+// OPEN NAV BAR MENU ---------------
+
+const hamburgerBtn = document.querySelector(".nav_toggle-btn");
+
+hamburgerBtn.addEventListener("click", () => {
+  console.log("ok");
+});

@@ -1,0 +1,209 @@
+.footer {
+  @include width-margin-set;
+  background-color: #fff;
+  height: 420px;
+  min-height: 420px;
+  max-height: 420px;
+  display: grid;
+  grid-template-columns: repeat(8, minmax(fit-content, 1fr));
+  grid-template-rows: repeat(8, 1fr);
+  padding: 0px $main_padding;
+  gap: 10px;
+}
+
+.footer h6 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.footer_branding {
+  width: auto;
+  //   min-width: 105px;
+  height: 30px;
+  grid-row: 2/4;
+  grid-column-start: 1;
+  align-self: center;
+  justify-self: start;
+  margin-top: 25px;
+}
+
+.footer_branding img {
+  width: auto;
+  height: 30px;
+}
+
+.footer_copyright {
+  grid-row: 7/8;
+  grid-column-start: 1;
+  align-self: start;
+  justify-self: start;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.footer_ul li {
+  display: block;
+  padding: 2px 0px;
+}
+.footer_ul li a {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.footer_ul-navigation-container {
+  grid-row: 3/5;
+  grid-column: 2/4;
+  justify-self: center;
+  align-self: start;
+}
+
+.footer_ul-navigation div:first-of-type {
+  margin-right: 4vw;
+}
+
+.footer_ul-newsletter-container {
+  grid-row: 3/7;
+  grid-column: 4/7;
+  justify-self: center;
+  align-self: start;
+  position: relative;
+  width: 280px;
+}
+
+.footer_ul-newsletter-container:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  border-radius: 10px;
+  height: 2px;
+  background-color: $color__text-main;
+  bottom: 0;
+}
+
+.footer_form {
+  display: flex;
+  gap: 10px;
+  color: $color__text-main;
+}
+
+.footer_input-email {
+  border: transparent;
+  flex-grow: 1;
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 700;
+  margin-bottom: 10px;
+  padding-left: 5px;
+}
+
+.footer_input-email::placeholder {
+  color: $color__text-main;
+  opacity: 1;
+}
+
+#footer_submit-btn {
+  width: 25px;
+  height: 25px;
+  background-color: $color__text-main;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  margin-left: 14px;
+  cursor: pointer;
+  border: none;
+  margin-bottom: 10px;
+}
+
+#footer_submit-btn:focus {
+  outline-offset: 5px;
+}
+
+#footer_submit-btn:after {
+  position: absolute;
+  content: "";
+  background-image: url("http://localhost/aeriz2023/wp-content/uploads/2023/06/arrow.svg");
+  background-size: cover;
+  background-position: center;
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: none;
+}
+
+#footer_submit-btn:before {
+  position: absolute;
+  content: "";
+  background-image: url("http://localhost/aeriz2023/wp-content/uploads/2023/06/arrow.svg");
+  background-size: cover;
+  background-position: center;
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  left: -50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all ease 250ms;
+  transition: none;
+}
+
+#footer_submit-btn:hover:after {
+  transform: translate(100%, -50%);
+  transition: transform ease 250ms;
+}
+#footer_submit-btn:hover:before {
+  transition: all ease 500ms;
+  left: 50%;
+}
+
+.footer_ul-company-container {
+  grid-row: 3/7;
+  grid-column: 7/8;
+  align-self: start;
+  justify-self: end;
+  margin-right: 25px;
+}
+
+.footer_ul-web-container {
+  grid-row: 3/7;
+  grid-column: 8/9;
+  align-self: start;
+  justify-self: end;
+}
+
+.footer_ul-company-container .footer_ul a {
+  position: relative;
+}
+.footer_ul-company-container .footer_ul a:after {
+  position: absolute;
+  content: "";
+  height: 10px;
+  width: 10px;
+  //   background-color: red;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url(http://localhost/aeriz2023/wp-content/uploads/2023/06/skinny-arrow.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footer_legal {
+  display: flex;
+  grid-row: 7/8;
+  grid-column: 6/9;
+  align-self: start;
+  justify-self: end;
+  white-space: nowrap;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.footer_legal a:first-of-type {
+  margin-right: 15px;
+}

@@ -150,7 +150,7 @@ function aeriz_scripts() {
 	wp_enqueue_script( 'global', get_template_directory_uri() . '/js/global.js', array(), $dev, true );
 	wp_enqueue_script( 'scroll-observe', get_template_directory_uri() . '/js/scroll-observable.js', array(), $dev, true );
 	wp_enqueue_script( 'frame-scrubber', get_template_directory_uri() . '/js/canvas-frame-scrubber.js', array(), $dev, true );
-	wp_enqueue_script( 'main-scroll', get_template_directory_uri() . '/js/main.js', array(), $dev, true );
+	wp_enqueue_script( 'video-scroll', get_template_directory_uri() . '/js/scroll-video.js', array(), $dev, true );
 
 	// if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 	// 	wp_enqueue_script( 'comment-reply' );
@@ -215,4 +215,10 @@ function automatic_GitHub_updates($data) {
     }
   }
   return $data;
+}
+
+// THIS TAKES OUT GUTENHBERG EDITOR SCRIPT FOR MAIN PAGE - MAY NEED TO ADD AGAIN FOR BLOG?
+add_action( 'wp_print_styles', 'wps_deregister_styles', 100 );
+function wps_deregister_styles() {
+    wp_dequeue_style( 'wp-block-library' );
 }

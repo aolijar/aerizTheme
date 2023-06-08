@@ -1,18 +1,12 @@
-/* Navigation
+/* Header
 --------------------------------------------- */
-@import "navigation/navigation";
-
-/* Posts and pages
+@import "navigation/header";
+/* Footer
 --------------------------------------------- */
-@import "content/posts-and-pages";
-
-/* Comments
+@import "navigation/footer";
+/* Menu
 --------------------------------------------- */
-@import "comments/comments";
-
-/* Widgets
---------------------------------------------- */
-@import "widgets/widgets";
+@import "navigation/menu";
 
 /* Media
 --------------------------------------------- */

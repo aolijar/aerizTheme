@@ -64,6 +64,7 @@ Template Post Type: page
         <!---->
         <section class="section_default section_main-blog">
           <p>BLOG HERE</p>
+          
         </section>
         <!---->
       </main>
