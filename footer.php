@@ -42,9 +42,9 @@
 		<!---->
 		<div class="footer_ul-newsletter-container">
 			<h6>Stay In The Grow</h6>
-			<form class="footer_form" action="">
-				<input class="footer_input-email" id="newsletter" name="newsletter"  type="email" placeholder="Enter email address"/>
-				<button id="footer_submit-btn" title="Sign-up for our newsletter" aria-label="Submit" class="" type="submit"></button>
+			<form  class="footer_form" action="">
+				<input tabindex="0" class="footer_input-email" id="newsletter" name="newsletter"  type="email" placeholder="Enter email address"/>
+				<button tabindex="0" id="footer_submit-btn" title="Sign-up for our newsletter" aria-label="Submit" class="footer_input-submit" type="submit"></button>
 			</form>
 		</div>
 		<!---->

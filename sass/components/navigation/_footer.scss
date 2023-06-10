@@ -151,11 +151,11 @@
   transition: none;
 }
 
-#footer_submit-btn:hover:after {
+.footer_ul-newsletter-container:hover #footer_submit-btn:after {
   transform: translate(100%, -50%);
   transition: transform ease 250ms;
 }
-#footer_submit-btn:hover:before {
+.footer_ul-newsletter-container:hover #footer_submit-btn:before {
   transition: all ease 500ms;
   left: 50%;
 }
@@ -183,11 +183,10 @@
   content: "";
   height: 10px;
   width: 10px;
-  //   background-color: red;
   right: -20px;
   top: 50%;
   transform: translateY(-50%);
-  background-image: url(http://localhost/aeriz2023/wp-content/uploads/2023/06/skinny-arrow.svg);
+  background-image: url(http://localhost/aeriz2023/wp-content/uploads/2023/06/list-arrow.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
