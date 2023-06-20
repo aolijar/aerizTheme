@@ -8,12 +8,15 @@
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
   box-sizing: border-box;
 }
+
 .age-overlay-scroll {
   overflow: hidden;
 }
+
 html,
 body {
   font-family: $font__main;

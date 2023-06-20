@@ -93,7 +93,8 @@
 						<!---->
 						<li class="nav__aeriz-hotline">
 							<a  aria-label="Call The Aeriz Hotline 1-844-837-7363" href="tel:18448377363">
-								<img src="http://localhost/aeriz2023/wp-content/uploads/2023/06/hotline-icon.gif" alt="Aeriz Hotline (844)-Terpene Logo">
+								<img src="http://localhost/aeriz2023/wp-content/uploads/2023/06/Aeriz_Website_CallNow_Circle.svg" alt="Aeriz Hotline (844)-Terpene Background">
+								<img class="nav__aeriz-hotline--moving-text" src="http://localhost/aeriz2023/wp-content/uploads/2023/06/Aeriz_Website_CallNow_MovingText.svg" alt="Aeriz Hotline (844)-Terpene Text">
 							</a>
 						</li>
 						<!---->

@@ -713,7 +713,33 @@ textarea {
   align-self: center;
   justify-self: end;
 }
+.nav__aeriz-hotline a {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+.nav__aeriz-hotline a img {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  align-self: center;
+  justify-self: center;
+}
 
+.nav__module--active .nav__aeriz-hotline--moving-text {
+  animation-name: callTextRotate;
+  animation-duration: 15000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes callTextRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .nav__secondary-links {
   grid-row: 7/11;
   grid-column: 10/12;
@@ -1166,6 +1192,7 @@ textarea {
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
   box-sizing: border-box;
 }

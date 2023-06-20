@@ -350,6 +350,35 @@
   grid-column: 11/13;
   align-self: center;
   justify-self: end;
+
+  & a {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  & a img {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    align-self: center;
+    justify-self: center;
+  }
+}
+
+.nav__module--active .nav__aeriz-hotline--moving-text {
+  animation-name: callTextRotate;
+  animation-duration: 15000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes callTextRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .nav__secondary-links {

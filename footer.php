@@ -13,7 +13,7 @@
 	<footer id="colophon" class="footer">
 		<!---->
 		<div class="footer__site-branding">
-			<a href="http://localhost/aeriz2023/" class="" rel="home" aria-label="Go To The Homepage" <?php if (is_page_template( 'page-home.php' )):?>aria-current="page"<?php endif?>>
+			<a href="https://aeriz.com/" class="" rel="home" aria-label="Go To The Homepage" <?php if (is_page_template( 'page-home.php' )):?>aria-current="page"<?php endif?>>
 				<img src="http://localhost/aeriz2023/wp-content/uploads/2023/06/Aeriz_Logo.svg" alt="Aeriz Logo">
 			</a>
 		</div>
