@@ -12,19 +12,19 @@
 ?>
 	<footer id="colophon" class="footer">
 		<!---->
-		<div class="footer_branding">
+		<div class="footer__site-branding">
 			<a href="http://localhost/aeriz2023/" class="" rel="home" aria-label="Go To The Homepage" <?php if (is_page_template( 'page-home.php' )):?>aria-current="page"<?php endif?>>
 				<img src="http://localhost/aeriz2023/wp-content/uploads/2023/06/Aeriz_Logo.svg" alt="Aeriz Logo">
 			</a>
 		</div>
 		<!---->
-		<div class="footer_copyright">
+		<div class="footer__copyright">
 			<p>@2023</p>
 		</div>
 		<!---->
-		<div class="footer_ul-navigation-container">
+		<div class="footer__ul-navigation-container">
 			<h6>Explore</h6>
-			<ul class="footer_ul footer_ul-navigation" aria-label="Site Links"> 
+			<ul class="footer__ul footer__ul-navigation-content" aria-label="Site Links"> 
 			<div>
 				<li><a href="">Ethos</a></li>
 				<li><a href="">Products</a></li>
@@ -40,17 +40,18 @@
 			</ul>
 		</div>
 		<!---->
-		<div class="footer_ul-newsletter-container">
+		<div class="footer__ul-newsletter-container">
 			<h6>Stay In The Grow</h6>
-			<form  class="footer_form" action="">
-				<input tabindex="0" class="footer_input-email" id="newsletter" name="newsletter"  type="email" placeholder="Enter email address"/>
-				<button tabindex="0" id="footer_submit-btn" title="Sign-up for our newsletter" aria-label="Submit" class="footer_input-submit" type="submit"></button>
+			<form title="newsletter sign-up" class="footer__form" action="">
+				<label aria-label="sign-up for our newsletter" for="footer__newsletter"></label>
+				<input title="enter Your email to sign-up for our newsletter" tabindex="0" class="footer__input-email" id="footer__newsletter" name="newsletter"  type="email" placeholder="Enter email address"/>
+				<button tabindex="0" id="footer__submit-btn" title="submit email input to sign-up for our newsletter" class="footer__input-submit" type="submit"></button>
 			</form>
 		</div>
 		<!---->
-		<div class="footer_ul-company-container">
+		<div class="footer__ul-company-container">
 			<h6>Company</h6>
-			<ul class="footer_ul" aria-label="Company Links"> 
+			<ul class="footer__ul" aria-label="Company Links"> 
 				<div>
 					<li><a href="">Careers</a></li>
 					<li><a href="">Email Us</a></li>
@@ -59,9 +60,9 @@
 			</ul>
 		</div>
 		<!---->
-		<div class="footer_ul-web-container">
+		<div class="footer__ul-web-container">
 			<h6>Web</h6>
-			<ul class="footer_ul" aria-label="Web Links"> 
+			<ul class="footer__ul" aria-label="Web Links"> 
 				<div>
 					<li><a target="_blank" href="">Leafly</a></li>
 					<li><a target="_blank" href="">Instagram</a></li>
@@ -71,7 +72,7 @@
 			</ul>
 		</div>
 		<!---->
-		<div class="footer_legal">
+		<div class="footer__legal">
 			<a href="">Terms & Conditions</a>
 			<a href="">Privacy Policy</a>
 		</div>

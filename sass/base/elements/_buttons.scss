@@ -1,4 +1,4 @@
-.btn_default {
+.btn__default {
   border: 2px solid $color__text-main;
   color: $color__text-main;
   font-weight: bold;
@@ -17,7 +17,7 @@
   white-space: nowrap;
 }
 
-.btn_w-holographic::after {
+.btn__w-holographic::after {
   position: absolute;
   content: "";
   border-radius: 50%;
@@ -33,17 +33,17 @@
   z-index: -2;
 }
 
-.btn_w-holographic:hover {
+.btn__w-holographic:hover {
   color: #fff;
   text-shadow: 0px 0px 1px #434343;
 }
 
-.btn_w-holographic:hover::after {
+.btn__w-holographic:hover::after {
   clip-path: circle(50%);
   transition: clip-path ease 500ms;
 }
 
-.btn_w-holographic-w-overlay::before {
+.btn__w-holographic-w-overlay::before {
   position: absolute;
   content: "";
   width: 100%;
@@ -58,13 +58,13 @@
   z-index: -1;
 }
 
-.btn_w-holographic-w-overlay:hover:before {
+.btn__w-holographic-w-overlay:hover:before {
   opacity: 0.5;
   transition: opacity ease 750ms;
   transition-delay: 250ms;
 }
 
-.btn_w-arrow {
+.btn__w-arrow {
   border: 2px solid $color__text-main;
   color: $color__text-main;
   font-weight: bold;
@@ -78,7 +78,7 @@
   background-color: transparent;
 }
 
-.btn_arrow {
+.btn__arrow {
   width: 25px;
   height: 25px;
   background-color: $color__text-main;
@@ -88,7 +88,7 @@
   margin-left: 14px;
 }
 
-.btn_arrow:after {
+.btn__arrow:after {
   position: absolute;
   content: "";
   background-image: url("http://localhost/aeriz2023/wp-content/uploads/2023/06/Arrow.png");
@@ -100,7 +100,7 @@
   transform: translate(-50%, -50%);
   transition: none;
 }
-.btn_arrow:before {
+.btn__arrow:before {
   position: absolute;
   content: "";
   background-image: url("http://localhost/aeriz2023/wp-content/uploads/2023/06/Arrow.png");
@@ -114,30 +114,29 @@
   transition: none;
 }
 
-.btn_w-arrow:hover {
+.btn__w-arrow:hover {
   cursor: pointer;
   box-shadow: 2px 2px 1.5px rgba(67, 67, 67, 0.5);
   // transform: translate(-0.5px, -0.5px);
   transition: all ease 250ms;
 }
-.btn_default:hover {
+.btn__default:hover {
   cursor: pointer;
   box-shadow: 2px 2px 1.5px rgba(67, 67, 67, 0.25),
     inset 2px 2px 2.5px rgba(67, 67, 67, 0.5);
   // transform: translate(-0.5px, -0.5px);
 }
 
-.btn_w-arrow:hover .btn_arrow:after {
+.btn__w-arrow:hover .btn__arrow:after {
   transform: translate(100%, -50%);
   transition: transform ease 250ms;
 }
-.btn_w-arrow:hover .btn_arrow:before {
+.btn__w-arrow:hover .btn__arrow:before {
   transition: all ease 500ms;
   left: 50%;
 }
 
-.btn_shop {
-  margin-right: 75px;
+.btn__header-shop {
   text-align: center;
   line-height: 20px;
 }

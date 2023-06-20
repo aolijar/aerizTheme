@@ -37,10 +37,10 @@ Template Post Type: page
             <input
               name="frames-url"
               type="hidden"
-              value="wp-content/uploads/2023/scrollVideoAssets/RootsHomepage_{{id}}.png"
-              data-frame-start="00000"
-              data-frame-end="00630"
-              data-frame-id-padding="5"
+              value="wp-content/uploads/2023/scrollVideoAssetsBefore/hero_render_frame-{{id}}.webp"
+              data-frame-start="001"
+              data-frame-end="213"
+              data-frame-id-padding="3"
             />
             <!-- /Applications/XAMPP/xamppfiles/htdocs/aeriz2023/wp-content/themes/aeriz2023/scrollVideoAssets/RootsHomepage/RootsHomepage_00000.png -->
             <canvas class="canvas" id="canvas"></canvas>
