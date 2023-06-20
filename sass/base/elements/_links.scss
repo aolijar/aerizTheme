@@ -16,4 +16,8 @@ a {
   &:active {
     outline: none;
   }
+
+  &:focus {
+    outline-offset: 5px;
+  }
 }

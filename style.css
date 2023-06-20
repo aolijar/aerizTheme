@@ -135,6 +135,9 @@ a:hover, a:focus, a:active {
 a:hover, a:active {
   outline: none;
 }
+a:focus {
+  outline-offset: 5px;
+}
 
 /* Forms
 --------------------------------------------- */
