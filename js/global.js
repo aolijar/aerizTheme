@@ -20,6 +20,7 @@ btn.forEach((b) =>
 const hamburgerBtn = document.getElementById("nav__toggle-btn");
 const outsideLinks = document.querySelectorAll("footer a");
 const headerLinks = document.querySelector(".header__site-branding a");
+// ==========================================
 hamburgerBtn.addEventListener("click", () => {
   //
   document.querySelector("body").classList.toggle("nav__module--active");
@@ -28,8 +29,10 @@ hamburgerBtn.addEventListener("click", () => {
   if (
     document.querySelector("body").classList.contains("nav__module--active")
   ) {
+    //
     document.querySelector("body").style.overflow = "hidden";
     document.querySelector(".hamburger__text").innerText = "EXIT";
+    //
     outsideLinks.forEach((a) => {
       a.setAttribute("tabindex", "-1");
     });
@@ -41,10 +44,13 @@ hamburgerBtn.addEventListener("click", () => {
       .querySelector(".footer__input-submit")
       .setAttribute("tabindex", "-1");
     document.getElementById("btn__header-shop").setAttribute("tabindex", "-1");
+    //
   } else {
+    //
     hamburgerBtn.setAttribute("aria-pressed", "false");
     document.querySelector("body").style.overflow = "auto";
     document.querySelector(".hamburger__text").innerText = "MENU";
+    //
     outsideLinks.forEach((a) => {
       a.setAttribute("tabindex", "0");
     });
@@ -56,6 +62,7 @@ hamburgerBtn.addEventListener("click", () => {
       .querySelector(".footer__input-submit")
       .setAttribute("tabindex", "0");
     document.getElementById("btn__header-shop").setAttribute("tabindex", "0");
+    //
   }
 });
 

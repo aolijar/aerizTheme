@@ -141,6 +141,10 @@ a:focus {
 
 /* Forms
 --------------------------------------------- */
+button:focus {
+  outline-offset: 5px;
+}
+
 .btn__default {
   border: 2px solid #9d9fa2;
   color: #9d9fa2;
@@ -176,12 +180,38 @@ a:focus {
   z-index: -2;
 }
 
+.btn__w-holographic:focus::after {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  clip-path: circle(0%);
+  width: 500px;
+  height: 500px;
+  background-image: url("http://localhost/aeriz2023/wp-content/uploads/2023/05/holographic.jpeg");
+  background-size: contain;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: none;
+  z-index: -2;
+}
+
 .btn__w-holographic:hover {
   color: #fff;
   text-shadow: 0px 0px 1px #434343;
 }
 
+.btn__w-holographic:focus {
+  color: #fff;
+  text-shadow: 0px 0px 1px #434343;
+}
+
 .btn__w-holographic:hover::after {
+  clip-path: circle(50%);
+  transition: clip-path ease 500ms;
+}
+
+.btn__w-holographic:focus::after {
   clip-path: circle(50%);
   transition: clip-path ease 500ms;
 }
@@ -201,7 +231,13 @@ a:focus {
   z-index: -1;
 }
 
-.btn__w-holographic-w-overlay:hover:before {
+.btn__w-holographic-w-overlay:hover::before {
+  opacity: 0.5;
+  transition: opacity ease 750ms;
+  transition-delay: 250ms;
+}
+
+.btn__w-holographic-w-overlay:focus::before {
   opacity: 0.5;
   transition: opacity ease 750ms;
   transition-delay: 250ms;
@@ -231,7 +267,7 @@ a:focus {
   margin-left: 14px;
 }
 
-.btn__arrow:after {
+.btn__arrow::after {
   position: absolute;
   content: "";
   background-image: url("http://localhost/aeriz2023/wp-content/uploads/2023/06/Arrow.png");
@@ -244,7 +280,7 @@ a:focus {
   transition: none;
 }
 
-.btn__arrow:before {
+.btn__arrow::before {
   position: absolute;
   content: "";
   background-image: url("http://localhost/aeriz2023/wp-content/uploads/2023/06/Arrow.png");
@@ -902,6 +938,16 @@ textarea {
 }
 
 .footer__ul-newsletter-container:hover #footer__submit-btn:before {
+  transition: all ease 500ms;
+  left: 50%;
+}
+
+#footer__submit-btn:focus:after {
+  transform: translate(100%, -50%);
+  transition: transform ease 250ms;
+}
+
+#footer__submit-btn:focus:before {
   transition: all ease 500ms;
   left: 50%;
 }

@@ -158,7 +158,18 @@
   transform: translate(100%, -50%);
   transition: transform ease 250ms;
 }
+
 .footer__ul-newsletter-container:hover #footer__submit-btn:before {
+  transition: all ease 500ms;
+  left: 50%;
+}
+
+#footer__submit-btn:focus:after {
+  transform: translate(100%, -50%);
+  transition: transform ease 250ms;
+}
+
+#footer__submit-btn:focus:before {
   transition: all ease 500ms;
   left: 50%;
 }
