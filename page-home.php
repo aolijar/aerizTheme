@@ -7,23 +7,34 @@ Template Post Type: page
 
 ?>
 <?php get_header(); ?>
+<!-- <div class="loading-test">
+  <p>Loading - <span class="loading-percent"></span>%</p>
+</div> -->
      <!---->   
       <!---->
-      <main class="main_sections-wrapper">
+      <main class="main__sections-wrapper">
         <!---->
-        <div class="grid-wrapper">
-        <section class="section_scroll-content-container">
+        <div class="scroll-content-wrapper">
+        <section id="hero" class="section__scroll-content-container">
           <!--  -->
-          <!-- <h3 data-trans="100" data-intro="90" class="hero-one fade-in">
-            Text Intro One 25%
-          </h3>
-          <h3 data-trans="-100" data-intro="70" class="hero-two fade-in">
-            Text Intro Two 65%
-          </h3>
-          <h3 data-trans="100" data-intro="45" class="hero-three fade-in">
-            Text Intro Three 45%
-          </h3> -->
-          <!---->
+          <div class="card__text hero-scroll-one">
+              <p aria-label="pristine roots" id="holographic-text " class="mask">Pristine<br>RoØts</p>
+          </div>
+          <div class="card__text hero-scroll-two">
+              <p aria-label="suspended in air" id="holographic-text " class="mask">Suspended<br>in Ai®</p>
+          </div>
+          <div class="card__text hero-scroll-three">
+            <!--NONE OF THESE NEED TO BE H1-->
+            <!--ONLY MAKE LAST HERO FRAME H1-->
+              <p aria-label="nutured with precision" id="holographic-text " class="mask">Nurtu®ed<br>with Precision</p>
+          </div>
+          <div class="hero__main-content">
+              <button id="btn__hero" class="btn__default ">Shop Our Cannabis</button>
+              <div class="card__text">
+              <h1 aria-label="Aeroponically Grown Cannabis" id="holographic-text " class="mask">AeRopØni©ally-<br>G®own Cannabis</h1>
+              </div>
+              <p>For Purity You Can See and Feel.</p>
+            </div>
           <!--CANVAS POSITION IN SECTION SO Z-INDEX CAN WORK-->
           <div
             aria-hidden="true"
@@ -37,9 +48,9 @@ Template Post Type: page
             <input
               name="frames-url"
               type="hidden"
-              value="wp-content/uploads/2023/scrollVideoAssetsBefore/hero_render_frame-{{id}}.webp"
+              value="wp-content/uploads/2023/redone4/hero_roots_frame-{{id}}.webp"
               data-frame-start="001"
-              data-frame-end="213"
+              data-frame-end="107"
               data-frame-id-padding="3"
             />
             <!-- /Applications/XAMPP/xamppfiles/htdocs/aeriz2023/wp-content/themes/aeriz2023/scrollVideoAssets/RootsHomepage/RootsHomepage_00000.png -->
@@ -50,19 +61,19 @@ Template Post Type: page
         </section>
         </div>
         <!---->
-        <section class="section_default section_main-products">
+        <section class="section__default section_main-products">
           <p>PRODUCTS HERE</p>
         </section>
         <!---->
-        <section class="section_default section_main-ethos">
+        <section class="section__default section_main-ethos">
           <p>ABOUT HERE</p>
         </section>
         <!---->
-        <section class="section_default section_main-picutres">
+        <section class="section__default section_main-picutres">
           <p>PICTURES HERE</p>
         </section>
         <!---->
-        <section class="section_default section_main-blog">
+        <section class="section__default section_main-blog">
           <p>BLOG HERE</p>
           
         </section>

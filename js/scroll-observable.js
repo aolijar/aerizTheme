@@ -40,7 +40,6 @@ ScrollObservable.prototype._process = function (cont) {
         (100 * (100 * scrolled)) /
           (containerHeight.clientHeight - viewportHeight)
       ) / 100;
-
     // console.log(scrolledPercentage, "scrolled percetnge");
 
     this.publish(scrolledPercentage);

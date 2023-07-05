@@ -10,6 +10,8 @@ const CanvasFrameScrubber = (() => {
         if (percentage >= 100) percentage = 100;
         // ENSURES VIDEO TRIGGER WON'T PLAY PAST CERTANIN POINT
         if (frameIndex >= frames.length) frameIndex = frames.length;
+        //
+        if (frameIndex < 15) frameIndex = 14;
         // THIS WILL SET DATA AVAILBE TO THE DOM THAT CAN BE PULLED ELSEWHERE
         document
           .getElementById("canvas-container")

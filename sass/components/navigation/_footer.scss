@@ -7,7 +7,7 @@
   display: grid;
   grid-template-columns: repeat(8, minmax(fit-content, 1fr));
   grid-template-rows: repeat(8, 1fr);
-  padding: 0px $main_padding;
+  padding: $main_padding--sides-only;
   gap: 10px;
 }
 

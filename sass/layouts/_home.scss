@@ -1,0 +1,58 @@
+/* HOME PAGE Sections ========================================================================== */
+
+/* MOVIE SCROLL */
+
+.main__sections-wrapper {
+  padding-top: $header_default_size;
+  position: relative;
+}
+
+.scroll-content-wrapper {
+  position: relative;
+  height: 5000px;
+  max-height: 5000px;
+  min-height: 5000px;
+  width: 100%;
+}
+
+.section__scroll-content-container {
+  position: sticky;
+  top: $header_default_size;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc(100vh - $header_default_size);
+  max-height: calc(100vh - $header_default_size);
+  width: 100%;
+  display: grid;
+  @include column-set-twelve;
+  gap: 5px;
+  overflow: hidden;
+}
+
+.canvas-container {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc(100vh - $header_default_size);
+  max-height: calc(100vh - $header_default_size);
+  width: 100%;
+  overflow: hidden;
+  grid-row: 1/13;
+  grid-column: 1/13;
+  justify-self: center;
+  align-self: center;
+  z-index: 2;
+  display: grid;
+  //   @include width-margin-set;
+}
+
+.canvas {
+  height: 100%;
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+}

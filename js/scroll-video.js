@@ -9,6 +9,8 @@ const FrameUnpacker = (() => {
     const calls = [];
     // download each frame image and prep it up
     for (let index = start; index <= end; index++) {
+      // console.log(Math.floor((index / end) * 100)); // CAN USE THIS FOR LOADING
+      // xhr.loaded / xhr.total * 100
       const id = index.toString().padStart(padding, "0"); // THIS SETS PADDING # - COULD BE ADJUSTED
       const url = urlPattern.replace("{{id}}", id);
       calls.push(
@@ -28,7 +30,7 @@ const FrameUnpacker = (() => {
     // keep thing s simple for now)
 
     // EXPLORE THIS /\  -- MAYBE ONLY TAKEN A CERTAIN AMOUNT OF PROMISES THEN GO AHEAD LIKE A CERTAIN AMOUNT - COULD BREAK IF LATER FRAMES HAVE ERRORS
-
+    // console.log(calls);
     await Promise.all(calls); // HOLD ALL BACK UNTIL FINISHED LOADING ALL IMAGES
     // console.log(calls, bitmaps);
 
@@ -80,6 +82,18 @@ const FrameUnpacker = (() => {
   canvas.width = frames[0].width;
   const context = canvas.getContext("2d");
   context.drawImage(frames[0], 0, 0);
+  // POSSIBLE FOR INTRO
+  var i = 0;
+  // !!!!!!!!!!!!!!!! --------------- !!!!!!!!!!!!!!
+  const scrollInt = setInterval(() => {
+    document.querySelector(".hero-scroll-one").style.opacity = "1";
+    if (i >= 14) {
+      clearInterval(scrollInt);
+    }
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.drawImage(frames[i], 0, 0);
+    i++;
+  }, 50);
 
   // videoContainer.appendChild(canvas);
 
@@ -92,22 +106,7 @@ const FrameUnpacker = (() => {
   );
 
   const observable = new ScrollObservable(
-    document.querySelector(".grid-wrapper")
+    document.querySelector(".scroll-content-wrapper")
   ); //NEED TO PASS IN CONTAINER OF CANVAS/CANVAS DIRECT PARENT
   observable.subscribe(observer);
-  // console.log(frames);
-  // SCROLL DOWN A BIT FOR MOVIE TO PLAY
 })();
-
-// GET ATTTRIBUTE OF CANVAS PERCENTAGE AND STOP AT CERTAIN POINT
-// var i = 0;
-// function scrollIt() {
-//   var test = setInterval(() => {
-//     if (i > 100) {
-//       clearInterval(test);
-//     }
-//     console.log(i);
-//     window.scrollBy(0, i);
-//     i++;
-//   }, 50);
-// }

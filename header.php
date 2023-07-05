@@ -46,7 +46,25 @@
 					<!---->
 					<button aria-label="Toggle Navigation Menu" aria-pressed="false" aria-haspopup="true" class="nav__toggle-btn" id="nav__toggle-btn">
 						<!---->
-						<p class="hamburger__text">MENU<p>
+						<!-- <p class="hamburger__text">MENU<p> -->
+							<div class="hamburger__text--container">
+								<div class="hamburger__text--clip-mid-nav">
+									<span>M</span>
+									<span>M</span>
+								</div>
+								<div class="hamburger__text--clip-mid-nav">
+									<span>E</span>
+									<span>E</span>
+								</div>
+								<div class="hamburger__text--clip-mid-nav">
+									<span>N</span>
+									<span>N</span>
+								</div>
+								<div class="hamburger__text--clip-mid-nav">
+									<span>U</span>
+									<span>U</span>
+								</div>
+							</div>
 						<!---->
 						<div class="hamburger__container">
 							<div  class="hamburger hamburger__layer-one"></div>
@@ -63,30 +81,199 @@
 							</a>
 						</li>
 						<!---->
-						<div class="nav__main-links">
+						<div class="nav__main-links-container">
 							<li>
-								<a href="">
-									ETHOS
+								<a class="nav__main-link" aria-label="ethos" href="">
+									<div class="nav__main-links-clip-container">
+										<div class="nav__main-links-clips">
+											<span>e</span>
+											<span>e</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>t</span>
+											<span>t</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>h</span>
+											<span>h</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>o</span>
+											<span>o</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>s</span>
+											<span>s</span>
+										</div>
+									</div>
 								</a>
 							</li>
 							<li>
-								<a href="">
-									PRODUCTS
+								<a class="nav__main-link" aria-label="products" href="">
+									<div class="nav__main-links-clip-container">
+										<div class="nav__main-links-clips">
+											<span>p</span>
+											<span>p</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>r</span>
+											<span>r</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>o</span>
+											<span>o</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>d</span>
+											<span>d</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>u</span>
+											<span>u</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>©</span>
+											<span>c</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>t</span>
+											<span>t</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>s</span>
+											<span>s</span>
+										</div>
+									</div>
 								</a>
 							</li>
 							<li>
-								<a href="">
-								Sustainability											
+								<a class="nav__main-link" aria-label="sustainability" href="">
+									<div class="nav__main-links-clip-container nav__main-links-sustainability">
+										<div class="nav__main-links-clips">
+											<span>s</span>
+											<span>s</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>u</span>
+											<span>u</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>s</span>
+											<span>s</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>t</span>
+											<span>t</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>a</span>
+											<span>a</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>i</span>
+											<span>i</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>n</span>
+											<span>n</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>a</span>
+											<span>a</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>b</span>
+											<span>b</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>i</span>
+											<span>i</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>l</span>
+											<span>l</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>i</span>
+											<span>i</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>t</span>
+											<span>t</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>y</span>
+											<span>y</span>
+										</div>
+									</div>											
 								</a>
 							</li>
 							<li>
-								<a href="">
-									STRAINS											
+								<a class="nav__main-link" aria-label="strains" href="">
+									<div class="nav__main-links-clip-container nav__main-links-strains">
+										<div class="nav__main-links-clips">
+											<span>s</span>
+											<span>s</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>t</span>
+											<span>t</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>r</span>
+											<span>r</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>a</span>
+											<span>a</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>i</span>
+											<span>i</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>n</span>
+											<span>n</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>s</span>
+											<span>s</span>
+										</div>
+									</div>											
 								</a>
 							</li>
 							<li>
-								<a href="">
-									Culture
+								<a class="nav__main-link" aria-label="culture" href="">
+									<div class="nav__main-links-clip-container nav__main-links-culture">
+										<div class="nav__main-links-clips">
+											<span>c</span>
+											<span>c</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>u</span>
+											<span>u</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>l</span>
+											<span>l</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>t</span>
+											<span>t</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>u</span>
+											<span>u</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>r</span>
+											<span>r</span>
+										</div>
+										<div class="nav__main-links-clips">
+											<span>e</span>
+											<span>e</span>
+										</div>
+									</div>
 								</a>
 							</li> 
 						</div>

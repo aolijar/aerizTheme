@@ -19,6 +19,7 @@ button:focus {
   z-index: 1;
   transition: all ease 150ms;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .btn__w-holographic::after {
