@@ -52,7 +52,9 @@ const FrameUnpacker = (() => {
 // MAIN FUNCTION ------------------------------------------------------------------------------------
 (async () => {
   // #1 DECLARE CANVAS CONTAINERS
-  const videoContainer = document.querySelector("#canvas-container");
+  const videoContainer = document.getElementById(
+    "section__hero-canvas-container"
+  );
   // #2 DELCARE INPUTS - THESE INPUT ELEMENTS HOLD CRUCIAL DATA TO FRAME/MOVIE INFO - MAYBE PLACE THESE AS VARIABLES INSIDE FUNCTION?
   const framesUrlElement = document.querySelector('input[name="frames-url"]');
   // ERROR IF NOTHING FOUND
@@ -76,37 +78,206 @@ const FrameUnpacker = (() => {
   // #5 CREATING CANVAS ---------------------------------------------------------
   // const canvas = document.createElement("canvas");
   // canvas.classList.add("canvas");
-  const canvas = document.getElementById("canvas");
-
+  const canvas = document.getElementById("section__hero-canvas");
   canvas.height = frames[0].height;
   canvas.width = frames[0].width;
-  const context = canvas.getContext("2d");
+  var context = canvas.getContext("2d");
   context.drawImage(frames[0], 0, 0);
-  // POSSIBLE FOR INTRO
-  var i = 0;
-  // !!!!!!!!!!!!!!!! --------------- !!!!!!!!!!!!!!
-  const scrollInt = setInterval(() => {
-    document.querySelector(".hero-scroll-one").style.opacity = "1";
-    if (i >= 14) {
-      clearInterval(scrollInt);
-    }
+  //
+  const scrolled = Math.max(
+    document.querySelector(".section__hero").getBoundingClientRect().top * -1
+  );
+  //
+  const scrolledPercentage =
+    Math.round(
+      (100 * (100 * scrolled)) /
+        (document.querySelector(".section__hero").clientHeight -
+          document.documentElement.clientHeight)
+    ) / 100;
+  var frameIndex = Math.floor((scrolledPercentage * (frames.length - 1)) / 100);
+  //
+  if (scrolledPercentage <= 0) {
+    //
+    var i = 0;
+    //
+    const scrollInt = setInterval(() => {
+      document
+        .querySelector(".section__hero-scroll-one")
+        .classList.add("section__hero-scroll-text--active");
+      document
+        .querySelector(".section__hero-scroll-one-text")
+        .setAttribute("aria-hidden", "false");
+      if (i >= 14) {
+        clearInterval(scrollInt);
+      }
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.drawImage(frames[i], 0, 0);
+      i++;
+    }, 50);
+  } else {
+    //
+    if (frameIndex <= 0) frameIndex = 0;
+    //
+    if (frameIndex >= frames.length) frameIndex = frames.length - 1;
+    //
+    if (frameIndex < 15) frameIndex = 14;
+    //
     context.clearRect(0, 0, canvas.width, canvas.height);
-    context.drawImage(frames[i], 0, 0);
-    i++;
-  }, 50);
-
-  // videoContainer.appendChild(canvas);
-
+    context.drawImage(frames[frameIndex], 0, 0);
+    heroTextOnLoad(frameIndex);
+  }
+  //
+  //
   // #6 ASSIGN TO SCRUBBER -> OBSERVER - THIS WILL SCALE VIDEO FRAMES TO HEIGHT OF SECTIONS IT IS AND ADJUST TO VIEWPORT
-
-  // HERO
+  //
+  //
+  // OBSERVE HERO
   const observer = CanvasFrameScrubber.create(
     frames,
-    document.getElementById("canvas") // NEED TO OBSERVE CANVAS TO PUT NEW FRAMES
+    document.getElementById("section__hero-canvas") // NEED TO OBSERVE CANVAS TO PUT NEW FRAMES
   );
-
+  //
   const observable = new ScrollObservable(
-    document.querySelector(".scroll-content-wrapper")
+    document.querySelector(".section__hero")
   ); //NEED TO PASS IN CONTAINER OF CANVAS/CANVAS DIRECT PARENT
   observable.subscribe(observer);
 })();
+
+function heroTextOnLoad(frame) {
+  if (frame <= 15) {
+    document
+      .querySelector(".section__hero-scroll-one")
+      .classList.add("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-scroll-two")
+      .classList.remove("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-scroll-three")
+      .classList.remove("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-main-content")
+      .classList.remove("section__hero-main-content--active");
+    // ATTRIBUTES
+    document
+      .querySelector(".section__hero-scroll-one-text")
+      .setAttribute("aria-hidden", "false");
+    document
+      .querySelector(".section__hero-scroll-two-text")
+      .setAttribute("aria-hidden", "true");
+    document
+      .querySelector(".section__hero-scroll-three-text")
+      .setAttribute("aria-hidden", "true");
+    document
+      .querySelector(".section__hero-main-scroll-text")
+      .setAttribute("aria-hidden", "true");
+    // document.getElementById("btn__hero").setAttribute("tabIndex", "-1");
+  } else if (frame > 15 && frame < 42) {
+    document
+      .querySelector(".section__hero-scroll-one")
+      .classList.remove("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-scroll-two")
+      .classList.remove("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-scroll-three")
+      .classList.remove("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-main-content")
+      .classList.remove("section__hero-main-content--active");
+    // ATTRIBUTES
+    document
+      .querySelector(".section__hero-scroll-one-text")
+      .setAttribute("aria-hidden", "true");
+    document
+      .querySelector(".section__hero-scroll-two-text")
+      .setAttribute("aria-hidden", "true");
+    document
+      .querySelector(".section__hero-scroll-three-text")
+      .setAttribute("aria-hidden", "true");
+    document
+      .querySelector(".section__hero-main-scroll-text")
+      .setAttribute("aria-hidden", "true");
+    // document.getElementById("btn__hero").setAttribute("tabIndex", "-1");
+  } else if (frame >= 42 && frame < 70) {
+    document
+      .querySelector(".section__hero-scroll-one")
+      .classList.remove("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-scroll-two")
+      .classList.add("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-scroll-three")
+      .classList.remove("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-main-content")
+      .classList.remove("section__hero-main-content--active");
+    // ATTRIBUTES
+    document
+      .querySelector(".section__hero-scroll-one-text")
+      .setAttribute("aria-hidden", "true");
+    document
+      .querySelector(".section__hero-scroll-two-text")
+      .setAttribute("aria-hidden", "false");
+    document
+      .querySelector(".section__hero-scroll-three-text")
+      .setAttribute("aria-hidden", "true");
+    document
+      .querySelector(".section__hero-main-scroll-text")
+      .setAttribute("aria-hidden", "true");
+    // document.getElementById("btn__hero").setAttribute("tabIndex", "-1");
+  } else if (frame >= 70 && frame < 100) {
+    document
+      .querySelector(".section__hero-scroll-one")
+      .classList.remove("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-scroll-two")
+      .classList.remove("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-scroll-three")
+      .classList.add("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-main-content")
+      .classList.remove("section__hero-main-content--active");
+    // ATTRIBUTES
+    document
+      .querySelector(".section__hero-scroll-one-text")
+      .setAttribute("aria-hidden", "true");
+    document
+      .querySelector(".section__hero-scroll-two-text")
+      .setAttribute("aria-hidden", "true");
+    document
+      .querySelector(".section__hero-scroll-three-text")
+      .setAttribute("aria-hidden", "false");
+    document
+      .querySelector(".section__hero-main-scroll-text")
+      .setAttribute("aria-hidden", "true");
+    // document.getElementById("btn__hero").setAttribute("tabIndex", "-1");
+  } else if (frame >= 100) {
+    document
+      .querySelector(".section__hero-scroll-one")
+      .classList.remove("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-scroll-two")
+      .classList.remove("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-scroll-three")
+      .classList.remove("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-main-content")
+      .classList.add("section__hero-main-content--active");
+    // ATTRIBUTES
+    document
+      .querySelector(".section__hero-scroll-one-text")
+      .setAttribute("aria-hidden", "true");
+    document
+      .querySelector(".section__hero-scroll-two-text")
+      .setAttribute("aria-hidden", "true");
+    document
+      .querySelector(".section__hero-scroll-three-text")
+      .setAttribute("aria-hidden", "true");
+    document
+      .querySelector(".section__hero-main-scroll-text")
+      .setAttribute("aria-hidden", "false");
+    // document.getElementById("btn__hero").setAttribute("tabIndex", "0");
+  }
+}

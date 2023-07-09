@@ -4,6 +4,7 @@
   height: 420px;
   min-height: 420px;
   max-height: 420px;
+  display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(8, minmax(fit-content, 1fr));
   grid-template-rows: repeat(8, 1fr);
@@ -27,6 +28,9 @@
 }
 
 .footer__site-branding a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   align-items: center;
 }
@@ -86,6 +90,9 @@
 }
 
 .footer__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   gap: 10px;
   color: $color__text-main;
@@ -134,6 +141,8 @@
   height: 25px;
   left: 50%;
   top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   transition: none;
 }
@@ -149,12 +158,16 @@
   height: 25px;
   left: -50%;
   top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   transition: all ease 250ms;
   transition: none;
 }
 
 .footer__ul-newsletter-container:hover #footer__submit-btn:after {
+  -webkit-transform: translate(100%, -50%);
+  -ms-transform: translate(100%, -50%);
   transform: translate(100%, -50%);
   transition: transform ease 250ms;
 }
@@ -165,6 +178,8 @@
 }
 
 #footer__submit-btn:focus:after {
+  -webkit-transform: translate(100%, -50%);
+  -ms-transform: translate(100%, -50%);
   transform: translate(100%, -50%);
   transition: transform ease 250ms;
 }
@@ -199,6 +214,8 @@
   width: 10px;
   right: -20px;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   background-image: url(http://localhost/aeriz2023/wp-content/uploads/2023/06/list-arrow.svg);
   background-position: center;
@@ -207,6 +224,9 @@
 }
 
 .footer__legal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   grid-row: 7/8;
   grid-column: 6/9;

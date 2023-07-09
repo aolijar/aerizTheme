@@ -4,6 +4,9 @@ ol {
 }
 
 ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
 }
 

@@ -7,6 +7,9 @@ button:focus {
   color: $color__text-main;
   font-weight: bold;
   font-size: 1.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   align-items: center;
   padding: 5px 20px;
@@ -20,6 +23,7 @@ button:focus {
   transition: all ease 150ms;
   white-space: nowrap;
   cursor: pointer;
+  letter-spacing: 1px;
 }
 
 .btn__w-holographic::after {
@@ -33,6 +37,8 @@ button:focus {
   background-size: contain;
   top: var(--btnFillTop, "0px");
   left: var(--btnFillLeft, "0px");
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   transition: none;
   z-index: -2;
@@ -48,6 +54,8 @@ button:focus {
   background-size: contain;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   transition: none;
   z-index: -2;
@@ -104,6 +112,9 @@ button:focus {
   color: $color__text-main;
   font-weight: bold;
   font-size: 0.88rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   align-items: center;
   padding: 5px 7.5px 5px 20px;
@@ -132,6 +143,8 @@ button:focus {
   height: 25px;
   left: 50%;
   top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   transition: none;
 }
@@ -144,6 +157,8 @@ button:focus {
   height: 15px;
   left: -50%;
   top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   transition: all ease 250ms;
   transition: none;
@@ -152,17 +167,17 @@ button:focus {
 .btn__w-arrow:hover {
   cursor: pointer;
   box-shadow: 2px 2px 1.5px rgba(67, 67, 67, 0.5);
-  // transform: translate(-0.5px, -0.5px);
   transition: all ease 250ms;
 }
 .btn__default:hover {
   cursor: pointer;
   box-shadow: 2px 2px 1.5px rgba(67, 67, 67, 0.25),
     inset 2px 2px 2.5px rgba(67, 67, 67, 0.5);
-  // transform: translate(-0.5px, -0.5px);
 }
 
 .btn__w-arrow:hover .btn__arrow:after {
+  -webkit-transform: translate(100%, -50%);
+  -ms-transform: translate(100%, -50%);
   transform: translate(100%, -50%);
   transition: transform ease 250ms;
 }

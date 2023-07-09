@@ -14,14 +14,13 @@ const CanvasFrameScrubber = (() => {
         if (frameIndex < 15) frameIndex = 14;
         // THIS WILL SET DATA AVAILBE TO THE DOM THAT CAN BE PULLED ELSEWHERE
         document
-          .getElementById("canvas-container")
+          .getElementById("section__hero-canvas-container")
           .setAttribute("data-percent", percentage);
         document
-          .getElementById("canvas-container")
+          .getElementById("section__hero-canvas-container")
           .setAttribute("data-frame", frameIndex);
         //
         //
-        // console.log(percentage, "PERCENTAGE", frameIndex, "FRAME");
         //
         //
         // BUILDS NEWS FRAMES---------------

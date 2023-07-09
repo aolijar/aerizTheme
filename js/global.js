@@ -1,4 +1,4 @@
-// THIS SECTION IS FOR BUTTONS ONLY -------------------------
+// THIS SECTION IS FOR BUTTONS ONLY ------------------------- NEED TO CHANGE LOCATION OF STORING THESE FUNCTION/HOW
 const btn = document.querySelectorAll(".btn__default");
 
 btn.forEach((b) =>
@@ -14,12 +14,12 @@ btn.forEach((b) =>
   })
 );
 
-// OPEN NAV BAR MENU ---------------
-const hamburgerBtn = document.getElementById("nav__toggle-btn");
-const outsideLinks = document.querySelectorAll("footer a");
-const headerLinks = document.querySelector(".header__site-branding a");
-// ==========================================
-hamburgerBtn.addEventListener("click", () => {
+// ==============================================================================================================================
+// OPENS NAV BAR MENU ---------------
+document.getElementById("nav__toggle-btn").addEventListener("click", () => {
+  var hamburgerBtn = document.getElementById("nav__toggle-btn");
+  var outsideLinks = document.querySelectorAll("footer a");
+  var headerLinks = document.querySelector(".header__site-branding a");
   //
   document.querySelector("body").classList.toggle("nav__module--active");
   hamburgerBtn.setAttribute("aria-pressed", "true");
@@ -67,57 +67,205 @@ hamburgerBtn.addEventListener("click", () => {
     //
   }
 });
-
-// =====================
-
-document.getElementById("hero").addEventListener("mousemove", (event) => {
-  const holographicElement = document.querySelectorAll(".card__text");
-
-  const x = event.clientX;
-  const y = event.clientY;
+// ==============================================================================================================================
+// HANDLES HERO SCROLL OBSERVE FUNCTIONS ---------------
+function observingHeroScrollMouse(e) {
+  const holographicElement = document.querySelectorAll(
+    ".section__hero-text-mask"
+  );
+  const x = e.clientX;
+  const y = e.clientY;
   // console.log(x, y);
-  const width = document.getElementById("hero").clientWidth;
-  const height = document.getElementById("hero").clientHeight;
+  const width = document.querySelector(
+    ".section__hero-scroll-content-container"
+  ).clientWidth;
+  const height = document.querySelector(
+    ".section__hero-scroll-content-container"
+  ).clientHeight;
   const valueX = x / width;
   const valueY = y / height;
-  const percentage = "" + valueX * 150 + "% " + valueY * 200 + "%";
+  const percentage = `${valueX * 100}% ${valueY * 100}%`;
   holographicElement.forEach((text) => {
     text.style.backgroundPosition = percentage;
   });
-});
+}
 
-window.addEventListener("scroll", () => {
-  console.log("ok");
+function observingHeroScroll() {
   var frame = Number(
-    document.getElementById("canvas-container").getAttribute("data-frame")
+    document
+      .getElementById("section__hero-canvas-container")
+      .getAttribute("data-frame")
   );
 
   if (frame <= 15) {
-    document.querySelector(".hero-scroll-one").style.opacity = "1";
-    document.querySelector(".hero-scroll-two").style.opacity = "0";
-    document.querySelector(".hero-scroll-three").style.opacity = "0";
-    document.querySelector(".hero__main-content").style.opacity = "0";
+    document
+      .querySelector(".section__hero-scroll-one")
+      .classList.add("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-scroll-two")
+      .classList.remove("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-scroll-three")
+      .classList.remove("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-main-content")
+      .classList.remove("section__hero-main-content--active");
+    // ATTRIBUTES
+    document
+      .querySelector(".section__hero-scroll-one-text")
+      .setAttribute("aria-hidden", "false");
+    document
+      .querySelector(".section__hero-scroll-two-text")
+      .setAttribute("aria-hidden", "true");
+    document
+      .querySelector(".section__hero-scroll-three-text")
+      .setAttribute("aria-hidden", "true");
+    document
+      .querySelector(".section__hero-main-scroll-text")
+      .setAttribute("aria-hidden", "true");
+    // document.getElementById("btn__hero").setAttribute("tabIndex", "-1");
   } else if (frame > 15 && frame < 42) {
-    document.querySelector(".hero-scroll-one").style.opacity = "0";
-    document.querySelector(".hero-scroll-two").style.opacity = "0";
-    document.querySelector(".hero-scroll-three").style.opacity = "0";
-    document.querySelector(".hero__main-content").style.opacity = "0";
+    document
+      .querySelector(".section__hero-scroll-one")
+      .classList.remove("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-scroll-two")
+      .classList.remove("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-scroll-three")
+      .classList.remove("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-main-content")
+      .classList.remove("section__hero-main-content--active");
+    // ATTRIBUTES
+    document
+      .querySelector(".section__hero-scroll-one-text")
+      .setAttribute("aria-hidden", "true");
+    document
+      .querySelector(".section__hero-scroll-two-text")
+      .setAttribute("aria-hidden", "true");
+    document
+      .querySelector(".section__hero-scroll-three-text")
+      .setAttribute("aria-hidden", "true");
+    document
+      .querySelector(".section__hero-main-scroll-text")
+      .setAttribute("aria-hidden", "true");
+    // document.getElementById("btn__hero").setAttribute("tabIndex", "-1");
   } else if (frame >= 42 && frame < 70) {
-    document.querySelector(".hero-scroll-one").style.opacity = "0";
-    document.querySelector(".hero-scroll-two").style.opacity = "1";
-    document.querySelector(".hero-scroll-three").style.opacity = "0";
-    document.querySelector(".hero__main-content").style.opacity = "0";
+    document
+      .querySelector(".section__hero-scroll-one")
+      .classList.remove("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-scroll-two")
+      .classList.add("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-scroll-three")
+      .classList.remove("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-main-content")
+      .classList.remove("section__hero-main-content--active");
+    // ATTRIBUTES
+    document
+      .querySelector(".section__hero-scroll-one-text")
+      .setAttribute("aria-hidden", "true");
+    document
+      .querySelector(".section__hero-scroll-two-text")
+      .setAttribute("aria-hidden", "false");
+    document
+      .querySelector(".section__hero-scroll-three-text")
+      .setAttribute("aria-hidden", "true");
+    document
+      .querySelector(".section__hero-main-scroll-text")
+      .setAttribute("aria-hidden", "true");
+    // document.getElementById("btn__hero").setAttribute("tabIndex", "-1");
   } else if (frame >= 70 && frame < 100) {
-    document.querySelector(".hero-scroll-one").style.opacity = "0";
-    document.querySelector(".hero-scroll-two").style.opacity = "0";
-    document.querySelector(".hero-scroll-three").style.opacity = "1";
-    document.querySelector(".hero__main-content").style.opacity = "0";
+    document
+      .querySelector(".section__hero-scroll-one")
+      .classList.remove("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-scroll-two")
+      .classList.remove("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-scroll-three")
+      .classList.add("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-main-content")
+      .classList.remove("section__hero-main-content--active");
+    // ATTRIBUTES
+    document
+      .querySelector(".section__hero-scroll-one-text")
+      .setAttribute("aria-hidden", "true");
+    document
+      .querySelector(".section__hero-scroll-two-text")
+      .setAttribute("aria-hidden", "true");
+    document
+      .querySelector(".section__hero-scroll-three-text")
+      .setAttribute("aria-hidden", "false");
+    document
+      .querySelector(".section__hero-main-scroll-text")
+      .setAttribute("aria-hidden", "true");
+    // document.getElementById("btn__hero").setAttribute("tabIndex", "-1");
   } else if (frame >= 100) {
-    document.querySelector(".hero-scroll-one").style.opacity = "0";
-    document.querySelector(".hero-scroll-two").style.opacity = "0";
-    document.querySelector(".hero-scroll-three").style.opacity = "0";
-    document.querySelector(".hero__main-content").style.opacity = "1";
+    document
+      .querySelector(".section__hero-scroll-one")
+      .classList.remove("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-scroll-two")
+      .classList.remove("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-scroll-three")
+      .classList.remove("section__hero-scroll-text--active");
+    document
+      .querySelector(".section__hero-main-content")
+      .classList.add("section__hero-main-content--active");
+    // ATTRIBUTES
+    document
+      .querySelector(".section__hero-scroll-one-text")
+      .setAttribute("aria-hidden", "true");
+    document
+      .querySelector(".section__hero-scroll-two-text")
+      .setAttribute("aria-hidden", "true");
+    document
+      .querySelector(".section__hero-scroll-three-text")
+      .setAttribute("aria-hidden", "true");
+    document
+      .querySelector(".section__hero-main-scroll-text")
+      .setAttribute("aria-hidden", "false");
+    // document.getElementById("btn__hero").setAttribute("tabIndex", "0");
   }
+  // WILL NEED TO SET THIS UP TO BE ACTIVE BTN WHEN PAST THE HERO?
+  // MAYBE IF TAB TO BTN IT WILL SCROLL ALL THE WAT TO BOTTOM OF CANVAS??????
+  // POSSIBLY CHANGE ALL THESE OPACITYS TO A CLASS
 
-  console.log(frame);
+  // console.log(frame);
+}
+
+const heroScrollObserver = new IntersectionObserver(
+  (entries) => {
+    if (entries[0].isIntersecting) {
+      // console.log("on");
+      document
+        .querySelector(".section__hero-scroll-content-container")
+        .addEventListener("mousemove", observingHeroScrollMouse);
+      window.addEventListener("scroll", observingHeroScroll);
+    } else {
+      // console.log("off");
+      document
+        .querySelector(".section__hero-scroll-content-container")
+        .removeEventListener("mousemove", observingHeroScrollMouse);
+      window.removeEventListener("scroll", observingHeroScroll);
+    }
+  },
+  { threshold: 0.1 }
+);
+
+heroScrollObserver.observe(
+  document.querySelector(".section__hero-scroll-content-container")
+);
+
+// MAKES HERO BTN SCROLL INTO VIEW ON TAB
+// ==============================================================================================================================
+document.getElementById("btn__hero").addEventListener("focus", () => {
+  var heroBtn = document.getElementById("section__hero");
+  heroBtn.scrollIntoView(false);
 });
