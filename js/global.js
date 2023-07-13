@@ -408,21 +408,21 @@ function handleTextHoverEnterB() {
   const textHoverImg = document.createElement("div");
   textHoverImg.classList.add("test-img");
   textHoverImg.classList.add("test-img-blue");
-  document.getElementById("section__ethos").append(textHoverImg);
+  document.getElementById("section__ethos-container").append(textHoverImg);
 }
 
 function handleTextHoverEnterY() {
   const textHoverImg = document.createElement("div");
   textHoverImg.classList.add("test-img");
   textHoverImg.classList.add("test-img-yellow");
-  document.getElementById("section__ethos").append(textHoverImg);
+  document.getElementById("section__ethos-container").append(textHoverImg);
 }
 
 function handleTextHoverEnterP() {
   const textHoverImg = document.createElement("div");
   textHoverImg.classList.add("test-img");
   textHoverImg.classList.add("test-img-pink");
-  document.getElementById("section__ethos").append(textHoverImg);
+  document.getElementById("section__ethos-container").append(textHoverImg);
 }
 
 function handleTextHoverLeave() {
@@ -432,10 +432,12 @@ function handleTextHoverLeave() {
 }
 
 function handleTextHoverMove(e) {
-  var rect = document.getElementById("section__ethos").getBoundingClientRect();
+  var rect = document
+    .getElementById("section__ethos-container")
+    .getBoundingClientRect();
   var x = e.clientX - rect.left;
   var y = e.clientY - rect.top;
   // console.log(rect.top, rect.left, x, y);
-  document.querySelector(".test-img").style.left = `${x + 20}px`;
-  document.querySelector(".test-img").style.top = `${y - 370}px`;
+  document.querySelector(".test-img").style.left = `${x + 25}px`;
+  document.querySelector(".test-img").style.top = `${y - 375}px`;
 }
