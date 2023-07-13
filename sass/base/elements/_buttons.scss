@@ -1,3 +1,6 @@
+button {
+  cursor: pointer;
+}
 button:focus {
   outline-offset: 5px;
 }
@@ -33,7 +36,7 @@ button:focus {
   clip-path: circle(0%);
   width: 500px;
   height: 500px;
-  background-image: url("http://localhost/aeriz2023/wp-content/uploads/2023/05/holographic.jpeg");
+  background-image: url("http://localhost/aeriz2023/wp-content/uploads/2023/07/holographic.jpeg");
   background-size: contain;
   top: var(--btnFillTop, "0px");
   left: var(--btnFillLeft, "0px");
@@ -50,7 +53,7 @@ button:focus {
   clip-path: circle(0%);
   width: 500px;
   height: 500px;
-  background-image: url("http://localhost/aeriz2023/wp-content/uploads/2023/05/holographic.jpeg");
+  background-image: url("http://localhost/aeriz2023/wp-content/uploads/2023/07/holographic.jpeg");
   background-size: contain;
   top: 50%;
   left: 50%;
@@ -63,12 +66,12 @@ button:focus {
 
 .btn__w-holographic:hover {
   color: #fff;
-  text-shadow: 0px 0px 1px #434343;
+  // text-shadow: 0px 0px 1px #434343;
 }
 
 .btn__w-holographic:focus {
   color: #fff;
-  text-shadow: 0px 0px 1px #434343;
+  // text-shadow: 0px 0px 1px #434343;
 }
 
 .btn__w-holographic:hover::after {
@@ -122,6 +125,7 @@ button:focus {
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   background-color: transparent;
+  position: relative;
 }
 
 .btn__arrow {
@@ -132,55 +136,59 @@ button:focus {
   position: relative;
   overflow: hidden;
   margin-left: 14px;
+  position: relative;
 }
 
 .btn__arrow::after {
   position: absolute;
   content: "";
-  background-image: url("http://localhost/aeriz2023/wp-content/uploads/2023/06/Arrow.png");
+  background-image: url("http://localhost/aeriz2023/wp-content/uploads/2023/07/arrow.svg");
   background-size: cover;
+  background-position: center;
   width: 25px;
   height: 25px;
   left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  top: 49.75%;
+  -webkit-transform: translate(-50%, -49.75%);
+  -ms-transform: translate(-50%, -49.75%);
+  transform: translate(-50%, -49.75%);
   transition: none;
 }
 .btn__arrow::before {
   position: absolute;
   content: "";
-  background-image: url("http://localhost/aeriz2023/wp-content/uploads/2023/06/Arrow.png");
+  background-image: url("http://localhost/aeriz2023/wp-content/uploads/2023/07/arrow.svg");
   background-size: cover;
-  width: 15px;
-  height: 15px;
+  background-position: center;
+  width: 25px;
+  height: 25px;
   left: -50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  transition: all ease 250ms;
+  top: 49.75%;
+  -webkit-transform: translate(-50%, -49.75%);
+  -ms-transform: translate(-50%, -49.75%);
+  transform: translate(-50%, -49.75%);
   transition: none;
 }
 
-.btn__w-arrow:hover {
-  cursor: pointer;
-  box-shadow: 2px 2px 1.5px rgba(67, 67, 67, 0.5);
-  transition: all ease 250ms;
-}
-.btn__default:hover {
-  cursor: pointer;
-  box-shadow: 2px 2px 1.5px rgba(67, 67, 67, 0.25),
-    inset 2px 2px 2.5px rgba(67, 67, 67, 0.5);
-}
+// .btn__w-arrow:hover {
+//   cursor: pointer;
+//   // box-shadow: 2px 2px 1.5px rgba(67, 67, 67, 0.5);
+//   transition: all ease 250ms;
+// }
+// .btn__default:hover {
+//   cursor: pointer;
+//   box-shadow: 2px 2px 1.5px rgba(67, 67, 67, 0.25),
+//     inset 2px 2px 2.5px rgba(67, 67, 67, 0.5);
+// }
 
+.btn__w-arrow:focus .btn__arrow:after,
 .btn__w-arrow:hover .btn__arrow:after {
   -webkit-transform: translate(100%, -50%);
   -ms-transform: translate(100%, -50%);
   transform: translate(100%, -50%);
   transition: transform ease 250ms;
 }
+.btn__w-arrow:focus .btn__arrow:before,
 .btn__w-arrow:hover .btn__arrow:before {
   transition: all ease 500ms;
   left: 50%;
@@ -189,4 +197,20 @@ button:focus {
 .btn__header-shop {
   text-align: center;
   line-height: 20px;
+}
+#btn__section-purity {
+  justify-self: start;
+}
+
+#btn__hero {
+  background-color: $color__main-yellow;
+  color: #fff;
+  border-color: $color__main-yellow;
+}
+
+#btn__hero:hover,
+#btn__hero:focus {
+  background-color: transparent;
+  box-shadow: none;
+  color: $color__main-yellow;
 }

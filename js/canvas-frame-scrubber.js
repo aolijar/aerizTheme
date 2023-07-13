@@ -12,6 +12,7 @@ const CanvasFrameScrubber = (() => {
         if (frameIndex >= frames.length) frameIndex = frames.length;
         //
         if (frameIndex < 15) frameIndex = 14;
+        //
         // THIS WILL SET DATA AVAILBE TO THE DOM THAT CAN BE PULLED ELSEWHERE
         document
           .getElementById("section__hero-canvas-container")

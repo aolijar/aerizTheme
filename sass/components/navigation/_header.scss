@@ -1,13 +1,9 @@
 .header__content-container {
-  @include width-margin-set;
+  // @include width-margin-set;
   height: $header_default_size;
   padding: $main_padding--sides-only;
   position: fixed;
-  display: -ms-grid;
-  display: grid;
-  grid-template-rows: repeat(4, 1fr);
-  grid-template-columns: repeat(6, 1fr);
-  align-content: center;
+  width: 100%;
   top: 0;
   left: 0;
   right: 0;
@@ -15,6 +11,18 @@
   background: #fff;
   background-color: rgba(255, 255, 255, 1);
   transition: opacity ease 500ms;
+  @include grid-for-centering;
+}
+
+.header__content {
+  display: -ms-grid;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  @include width-margin-set;
+  @include grid-content-for-centering;
+  height: 100%;
+  width: 100%;
 }
 
 .header {
@@ -73,8 +81,8 @@
 
 .nav__toggle-btn {
   height: 25px;
-  width: 140px;
-  min-width: 140px;
+  width: 155px;
+  min-width: 155px;
   cursor: pointer;
   grid-column: 1/4;
   grid-row: 1/4;
@@ -86,7 +94,6 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  // transition: all ease 500ms;
   background-color: transparent;
   border: none;
 
@@ -121,65 +128,14 @@
 
 // HAMBURGER BTN TEXT ==============================================
 
-.hamburger__text--container {
-  display: -ms-grid;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr;
-  width: 51px;
-}
-
-.hamburger__text--clip-mid-nav {
-  grid-row: 1/2;
-  display: -ms-grid;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  align-self: center;
-  justify-self: center;
-  position: relative;
-}
-
-.hamburger__text--clip-mid-nav span {
-  align-self: center;
-  justify-self: center;
-  grid-row: 1/2;
-  grid-column: 1/2;
-  text-transform: uppercase;
-}
-
-@for $i from 0 through 4 {
-  .hamburger__text--clip-mid-nav:nth-of-type(#{$i + 1}) span:first-of-type {
-    left: calc(55% + $i * 1px);
-  }
-}
-
-.hamburger__text--clip-mid-nav span:first-of-type {
-  top: calc(50% + 1px);
-  -webkit-transform: translate(-55%, -50%);
-  -ms-transform: translate(-55%, -50%);
-  transform: translate(-55%, -50%);
-  position: absolute;
-  font-weight: 350;
-  font-family: "KormelinkItalic";
-  -webkit-font-feature-settings: "swsh";
-  -moz-font-feature-settings: "swsh";
-  font-feature-settings: "swsh";
-  clip-path: circle(0%);
-  -webkit-filter: blur(2.5px);
-  filter: blur(2.5px);
-  transition: all ease 250ms;
-  z-index: 2;
-}
-
-.hamburger__text--clip-mid-nav span:last-of-type {
-  color: #9d9fa2;
-  font-family: "Montserrat", sans-serif;
+.hamburger__text {
   font-weight: 700;
-  clip-path: circle(200%);
-  -webkit-filter: blur(0px);
-  filter: blur(0px);
-  transition: all ease 500ms;
+  font-family: $font__main;
+  transition: transform ease 250ms;
+}
+
+.nav__module--active .hamburger__text {
+  transform: rotate(90deg);
 }
 
 .hamburger {
@@ -191,7 +147,7 @@
 
 .hamburger__container {
   position: relative;
-  width: 80px;
+  width: 86px;
   height: 100%;
 }
 
@@ -233,9 +189,9 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  background-color: rgba(255, 255, 255, 0.25);
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
+  // background-color: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   width: 100%;
   height: 100%;
   top: 0;
@@ -260,8 +216,12 @@
   max-width: 1550px;
   max-height: 946px;
   border-radius: 20px;
-  background: rgb(226, 226, 226);
-  opacity: 0.5;
+  background: rgb(255, 255, 255);
+  box-shadow: inset 2.5px 2.5px 2.5px rgba(70, 69, 71, 0.05),
+    inset -2.5px -2.5px 2.5px rgba(70, 69, 71, 0.05),
+    -2.5px 2.5px 0px rgba(70, 69, 71, 0.1),
+    2.5px 2.5px 0px rgba(70, 69, 71, 0.1);
+  opacity: 0.75;
   z-index: 2;
 }
 
@@ -616,11 +576,7 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   position: absolute;
-  font-weight: 350;
-  font-family: "KormelinkItalic";
-  -webkit-font-feature-settings: "swsh";
-  -moz-font-feature-settings: "swsh";
-  font-feature-settings: "swsh";
+  @include kormelink-italic;
   clip-path: circle(0%);
   -webkit-filter: blur(5px);
   filter: blur(5px);
@@ -649,8 +605,12 @@
 .nav__main-link:hover .nav__main-links-clips span:last-of-type,
 .nav__main-link:focus .nav__main-links-clips span:last-of-type {
   clip-path: circle(0%);
-  -webkit-filter: blur(5px);
-  filter: blur(5px);
+  -webkit-filter: blur(7.5px);
+  filter: blur(7.5px);
   color: #fff;
   transition: all ease 500ms;
+}
+
+.nav__module--active {
+  overflow: hidden;
 }

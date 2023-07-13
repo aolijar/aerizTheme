@@ -85,13 +85,13 @@ const FrameUnpacker = (() => {
   context.drawImage(frames[0], 0, 0);
   //
   const scrolled = Math.max(
-    document.querySelector(".section__hero").getBoundingClientRect().top * -1
+    document.getElementById("section__hero").getBoundingClientRect().top * -1
   );
   //
   const scrolledPercentage =
     Math.round(
       (100 * (100 * scrolled)) /
-        (document.querySelector(".section__hero").clientHeight -
+        (document.getElementById("section__hero").clientHeight -
           document.documentElement.clientHeight)
     ) / 100;
   var frameIndex = Math.floor((scrolledPercentage * (frames.length - 1)) / 100);
@@ -100,21 +100,63 @@ const FrameUnpacker = (() => {
     //
     var i = 0;
     //
-    const scrollInt = setInterval(() => {
-      document
-        .querySelector(".section__hero-scroll-one")
-        .classList.add("section__hero-scroll-text--active");
-      document
-        .querySelector(".section__hero-scroll-one-text")
-        .setAttribute("aria-hidden", "false");
+    //opacity
+    document
+      .querySelector(".section__hero-scroll-one")
+      .classList.remove("section__hero-scroll-text--deactive");
+    document
+      .querySelector(".section__hero-scroll-one")
+      .classList.add("section__hero-scroll-text--active");
+    // scroll from side
+    document
+      .querySelector(".section__hero-scroll-one")
+      .classList.add("active-side");
+    //
+    document
+      .querySelector(".section__hero-scroll-one-text")
+      .setAttribute("aria-hidden", "false");
+    //
+    //
+    //
+    //
+    //
+    // INTERVAL FOR INTRO VIDEO
+    //
+    //
+    //
+    var timer = 25;
+    var i = 0;
+    var scrollInt = setInterval(testTimer, timer);
+    function testTimer() {
       if (i >= 14) {
         clearInterval(scrollInt);
+        return;
       }
       context.clearRect(0, 0, canvas.width, canvas.height);
       context.drawImage(frames[i], 0, 0);
+      clearInterval(scrollInt);
+      timer += 7.5;
       i++;
-    }, 50);
+      console.log(i, timer);
+      scrollInt = setInterval(testTimer, timer);
+    }
+    //
+    //
+    // var id = 100;
+    // const scrollInt = setInterval(() => {
+    //   if (i >= 14) {
+    //     clearInterval(scrollInt);
+    //   }
+    //   context.clearRect(0, 0, canvas.width, canvas.height);
+    //   context.drawImage(frames[i], 0, 0);
+    //   i++;
+    //   id = i * 2 + 1000;
+    //   // console.log(id);
+    // }, id);
   } else {
+    document
+      .querySelector(".section__hero-scroll-one")
+      .classList.remove("section__hero-scroll-text--deactive");
     //
     if (frameIndex <= 0) frameIndex = 0;
     //
@@ -138,13 +180,20 @@ const FrameUnpacker = (() => {
   );
   //
   const observable = new ScrollObservable(
-    document.querySelector(".section__hero")
+    document.getElementById("section__hero")
   ); //NEED TO PASS IN CONTAINER OF CANVAS/CANVAS DIRECT PARENT
   observable.subscribe(observer);
 })();
 
 function heroTextOnLoad(frame) {
-  if (frame <= 15) {
+  var frame = Number(
+    document
+      .getElementById("section__hero-canvas-container")
+      .getAttribute("data-frame")
+  );
+
+  if (frame <= 14) {
+    //OPACITY
     document
       .querySelector(".section__hero-scroll-one")
       .classList.add("section__hero-scroll-text--active");
@@ -155,23 +204,13 @@ function heroTextOnLoad(frame) {
       .querySelector(".section__hero-scroll-three")
       .classList.remove("section__hero-scroll-text--active");
     document
-      .querySelector(".section__hero-main-content")
-      .classList.remove("section__hero-main-content--active");
-    // ATTRIBUTES
+      .querySelector(".section__hero-main-content-back")
+      .classList.remove("section__hero-main-content-back--active");
     document
-      .querySelector(".section__hero-scroll-one-text")
-      .setAttribute("aria-hidden", "false");
-    document
-      .querySelector(".section__hero-scroll-two-text")
-      .setAttribute("aria-hidden", "true");
-    document
-      .querySelector(".section__hero-scroll-three-text")
-      .setAttribute("aria-hidden", "true");
-    document
-      .querySelector(".section__hero-main-scroll-text")
-      .setAttribute("aria-hidden", "true");
-    // document.getElementById("btn__hero").setAttribute("tabIndex", "-1");
+      .querySelector(".section__hero-main-content-forward")
+      .classList.remove("section__hero-main-content-forward--active");
   } else if (frame > 15 && frame < 42) {
+    // OPACITY ONLY
     document
       .querySelector(".section__hero-scroll-one")
       .classList.remove("section__hero-scroll-text--active");
@@ -182,23 +221,13 @@ function heroTextOnLoad(frame) {
       .querySelector(".section__hero-scroll-three")
       .classList.remove("section__hero-scroll-text--active");
     document
-      .querySelector(".section__hero-main-content")
-      .classList.remove("section__hero-main-content--active");
-    // ATTRIBUTES
+      .querySelector(".section__hero-main-content-back")
+      .classList.remove("section__hero-main-content-back--active");
     document
-      .querySelector(".section__hero-scroll-one-text")
-      .setAttribute("aria-hidden", "true");
-    document
-      .querySelector(".section__hero-scroll-two-text")
-      .setAttribute("aria-hidden", "true");
-    document
-      .querySelector(".section__hero-scroll-three-text")
-      .setAttribute("aria-hidden", "true");
-    document
-      .querySelector(".section__hero-main-scroll-text")
-      .setAttribute("aria-hidden", "true");
-    // document.getElementById("btn__hero").setAttribute("tabIndex", "-1");
+      .querySelector(".section__hero-main-content-forward")
+      .classList.remove("section__hero-main-content-forward--active");
   } else if (frame >= 42 && frame < 70) {
+    // OPACITY
     document
       .querySelector(".section__hero-scroll-one")
       .classList.remove("section__hero-scroll-text--active");
@@ -209,23 +238,13 @@ function heroTextOnLoad(frame) {
       .querySelector(".section__hero-scroll-three")
       .classList.remove("section__hero-scroll-text--active");
     document
-      .querySelector(".section__hero-main-content")
-      .classList.remove("section__hero-main-content--active");
-    // ATTRIBUTES
+      .querySelector(".section__hero-main-content-back")
+      .classList.remove("section__hero-main-content-back--active");
     document
-      .querySelector(".section__hero-scroll-one-text")
-      .setAttribute("aria-hidden", "true");
-    document
-      .querySelector(".section__hero-scroll-two-text")
-      .setAttribute("aria-hidden", "false");
-    document
-      .querySelector(".section__hero-scroll-three-text")
-      .setAttribute("aria-hidden", "true");
-    document
-      .querySelector(".section__hero-main-scroll-text")
-      .setAttribute("aria-hidden", "true");
-    // document.getElementById("btn__hero").setAttribute("tabIndex", "-1");
+      .querySelector(".section__hero-main-content-forward")
+      .classList.remove("section__hero-main-content-forward--active");
   } else if (frame >= 70 && frame < 100) {
+    // OPACITY
     document
       .querySelector(".section__hero-scroll-one")
       .classList.remove("section__hero-scroll-text--active");
@@ -236,23 +255,13 @@ function heroTextOnLoad(frame) {
       .querySelector(".section__hero-scroll-three")
       .classList.add("section__hero-scroll-text--active");
     document
-      .querySelector(".section__hero-main-content")
-      .classList.remove("section__hero-main-content--active");
-    // ATTRIBUTES
+      .querySelector(".section__hero-main-content-back")
+      .classList.remove("section__hero-main-content-back--active");
     document
-      .querySelector(".section__hero-scroll-one-text")
-      .setAttribute("aria-hidden", "true");
-    document
-      .querySelector(".section__hero-scroll-two-text")
-      .setAttribute("aria-hidden", "true");
-    document
-      .querySelector(".section__hero-scroll-three-text")
-      .setAttribute("aria-hidden", "false");
-    document
-      .querySelector(".section__hero-main-scroll-text")
-      .setAttribute("aria-hidden", "true");
-    // document.getElementById("btn__hero").setAttribute("tabIndex", "-1");
+      .querySelector(".section__hero-main-content-forward")
+      .classList.remove("section__hero-main-content-forward--active");
   } else if (frame >= 100) {
+    //OPACITY
     document
       .querySelector(".section__hero-scroll-one")
       .classList.remove("section__hero-scroll-text--active");
@@ -263,21 +272,10 @@ function heroTextOnLoad(frame) {
       .querySelector(".section__hero-scroll-three")
       .classList.remove("section__hero-scroll-text--active");
     document
-      .querySelector(".section__hero-main-content")
-      .classList.add("section__hero-main-content--active");
-    // ATTRIBUTES
+      .querySelector(".section__hero-main-content-back")
+      .classList.add("section__hero-main-content-back--active");
     document
-      .querySelector(".section__hero-scroll-one-text")
-      .setAttribute("aria-hidden", "true");
-    document
-      .querySelector(".section__hero-scroll-two-text")
-      .setAttribute("aria-hidden", "true");
-    document
-      .querySelector(".section__hero-scroll-three-text")
-      .setAttribute("aria-hidden", "true");
-    document
-      .querySelector(".section__hero-main-scroll-text")
-      .setAttribute("aria-hidden", "false");
-    // document.getElementById("btn__hero").setAttribute("tabIndex", "0");
+      .querySelector(".section__hero-main-content-forward")
+      .classList.add("section__hero-main-content-forward--active");
   }
 }

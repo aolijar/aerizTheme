@@ -44,8 +44,8 @@
 			<h6>Stay In The Grow</h6>
 			<form title="newsletter sign-up" class="footer__form" action="">
 				<label aria-label="sign-up for our newsletter" for="footer__newsletter"></label>
-				<input title="enter Your email to sign-up for our newsletter" tabindex="0" class="footer__input-email" id="footer__newsletter" name="newsletter"  type="email" placeholder="Enter email address"/>
-				<button tabindex="0" id="footer__submit-btn" title="submit email input to sign-up for our newsletter" class="footer__input-submit" type="submit"></button>
+				<input title="enter Your email to sign-up for our newsletter" tabindex="0" class="footer__input-email tab--deactivate" id="footer__newsletter" name="newsletter"  type="email" placeholder="Enter email address"/>
+				<button tabindex="0" id="footer__submit-btn" title="submit email input to sign-up for our newsletter" class="footer__input-submit tab--deactivate" type="submit"></button>
 			</form>
 		</div>
 		<!---->

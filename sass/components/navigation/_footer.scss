@@ -56,7 +56,12 @@
   justify-self: center;
   align-self: start;
 }
-
+.footer__ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
 .footer__ul li {
   display: block;
   padding: 2px 0px;
@@ -133,7 +138,7 @@
 #footer__submit-btn:after {
   position: absolute;
   content: "";
-  background-image: url("http://localhost/aeriz2023/wp-content/uploads/2023/06/arrow.svg");
+  background-image: url("http://localhost/aeriz2023/wp-content/uploads/2023/07/arrow.svg");
   background-size: cover;
   background-position: center;
   background-size: cover;
@@ -150,7 +155,7 @@
 #footer__submit-btn:before {
   position: absolute;
   content: "";
-  background-image: url("http://localhost/aeriz2023/wp-content/uploads/2023/06/arrow.svg");
+  background-image: url("http://localhost/aeriz2023/wp-content/uploads/2023/07/arrow.svg");
   background-size: cover;
   background-position: center;
   background-size: cover;
@@ -217,7 +222,7 @@
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  background-image: url(http://localhost/aeriz2023/wp-content/uploads/2023/06/list-arrow.svg);
+  background-image: url("http://localhost/aeriz2023/wp-content/uploads/2023/07/list-arrow.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

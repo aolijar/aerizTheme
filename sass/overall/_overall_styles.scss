@@ -54,19 +54,51 @@ html {
 }
 // SECTION DEFAULTS -
 .section__default {
-  height: 100vh;
-  max-height: 1000px; // MAY CHANGE
-  min-height: fit-content;
+  height: fit-content;
+  min-height: calc(100vh - $header_default_size);
   width: 100%;
+  display: -ms-grid;
+  display: grid;
+  @include grid-set-twelve;
+  padding: $section__default-padding;
+  @include width-margin-set;
 }
-//
+
+// SECTION DEFAULTS ===========
+.section__default-banner {
+  grid-row: 1/2;
+  grid-column: 1/13;
+  align-self: start;
+  @include grid-for-centering;
+}
+
+.section__default-banner-text {
+  text-transform: uppercase;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  grid-row: 1/2;
+  grid-column: 1/13;
+  align-self: center;
+  justify-self: start;
+}
+
+.section__default-banner-link {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 800;
+  grid-row: 1/2;
+  grid-column: 1/13;
+  align-self: center;
+  justify-self: end;
+}
+
+// END SECTION DEFAULTS ===============
 .alt-text {
-  font-family: $font__alt_italic;
-  -webkit-font-feature-settings: "swsh";
-  -moz-font-feature-settings: "swsh";
-  font-feature-settings: "swsh";
-  font-weight: 350;
-  color: $color__text-alt;
+  @include kormelink-italic;
+  color: $color__text-main;
 }
 /* Grouping content
 	 ========================================================================== */
