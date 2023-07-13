@@ -75,7 +75,7 @@ Template Post Type: page
                 <li><button data-tab-id="2"  class="section__products-tab-button tab--deactivate" role="tab" aria-controls="tab-2" aria-selected="false" aria-current="false">Live Resin</button></li>
                 <li><button data-tab-id="3"  class="section__products-tab-button tab--deactivate" role="tab" aria-controls="tab-3" aria-selected="false" aria-current="false">Live Rosin</button></li>
                 <li><button data-tab-id="4"  class="section__products-tab-button tab--deactivate" role="tab" aria-controls="tab-4" aria-selected="false" aria-current="false">Vapes</button></li>
-                <li><button data-tab-id="5"  class="section__products-tab-button tab--deactivate" role="tab" aria-controls="tab-5" aria-selected="false" aria-current="false">Full Spectrum Has Oil</button></li>
+                <li><button data-tab-id="5"  class="section__products-tab-button tab--deactivate" role="tab" aria-controls="tab-5" aria-selected="false" aria-current="false">Full Spectrum Hash Oil</button></li>
                 <li><button data-tab-id="6"  class="section__products-tab-button tab--deactivate" role="tab" aria-controls="tab-6" aria-selected="false" aria-current="false">Pre-Rolls</button></li> 
                 <li><button data-tab-id="7"  class="section__products-tab-button tab--deactivate" role="tab" aria-controls="tab-7" aria-selected="false" aria-current="false">Full Spectrum Hash Drops</button></li>
               </ul>
@@ -147,7 +147,7 @@ Template Post Type: page
           <div class="section__default-banner">
             <h3 class="section__default-banner-text">Purity with a Purpose</h3>
           </div>
-          <article class="section__ethos-article">
+          <article id="section__ethos-article" class="section__ethos-article">
           Our aeroponic cultivation process honors the plant – and planet – first. Instead of soil, we use <span class="text__color-mask-yellow text__hover-img">recyclable clay beds</span> and a <span class="text__color-mask-pink text__hover-img">closed-loop nutrient system</span> to reap consistent, high-quality grows without unnecessary waste. With the <span class="text__color-mask-blue text__hover-img">lowest contamination numbers in the industry</span>, sustainable packaging, and a partnership with Pachama, we’re committed to doing better by Earth. 
           </article>
         </section>

@@ -332,74 +332,110 @@ document.getElementById("btn__hero").addEventListener("focus", () => {
 const ethosScrollObserver = new IntersectionObserver(
   (entries) => {
     if (entries[0].isIntersecting) {
-      console.log("on");
-
-      document.querySelectorAll(".text__hover-img").forEach((text) => {
-        var textHoverImg;
-        var movement = false;
-        text.addEventListener("mouseenter", () => {
-          movement = true;
-          textHoverImg = document.createElement("div");
-          textHoverImg.classList.add("test-img");
-          document.getElementById("section__ethos").append(textHoverImg);
-          if (text.classList.contains("text__color-mask-yellow")) {
-            textHoverImg.classList.add("test-img-yellow");
-          } else if (text.classList.contains("text__color-mask-pink")) {
-            textHoverImg.classList.add("test-img-pink");
-          } else if (text.classList.contains("text__color-mask-blue")) {
-            textHoverImg.classList.add("test-img-blue");
-          }
-        });
-        text.addEventListener("mouseleave", () => {
-          movement = false;
-          document.querySelectorAll(".test-img").forEach((el) => {
-            el.remove();
-          });
-          if (text.classList.contains("text__color-mask-yellow")) {
-            console.log("end yellow");
-          } else if (text.classList.contains("text__color-mask-pink")) {
-            console.log("end pink");
-          } else if (text.classList.contains("text__color-mask-blue")) {
-            console.log("end blue");
-          }
-        });
-        text.addEventListener("mousemove", (e) => {
-          if (movement === true) {
-            var x = e.clientX;
-            var y = e.clientY;
-
-            console.log(x, y, text.offsetTop, text.offsetLeft);
-            document.querySelector(".test-img").style.left = `${x}px`;
-            document.querySelector(".test-img").style.top = `${y}px`;
-          }
-        });
-      });
-      // document.querySelectorAll(".text__hover-img").forEach((text) => {});
+      // console.log("on");
+      //
+      document
+        .querySelector(".text__color-mask-blue")
+        .addEventListener("mouseenter", handleTextHoverEnterB);
+      document
+        .querySelector(".text__color-mask-blue")
+        .addEventListener("mouseleave", handleTextHoverLeave);
+      document
+        .querySelector(".text__color-mask-blue")
+        .addEventListener("mousemove", handleTextHoverMove);
+      //
+      document
+        .querySelector(".text__color-mask-yellow")
+        .addEventListener("mouseenter", handleTextHoverEnterY);
+      document
+        .querySelector(".text__color-mask-yellow")
+        .addEventListener("mouseleave", handleTextHoverLeave);
+      document
+        .querySelector(".text__color-mask-yellow")
+        .addEventListener("mousemove", handleTextHoverMove);
+      //
+      document
+        .querySelector(".text__color-mask-pink")
+        .addEventListener("mouseenter", handleTextHoverEnterP);
+      document
+        .querySelector(".text__color-mask-pink")
+        .addEventListener("mouseleave", handleTextHoverLeave);
+      document
+        .querySelector(".text__color-mask-pink")
+        .addEventListener("mousemove", handleTextHoverMove);
+      //
     } else {
-      console.log("off");
-      document.querySelectorAll(".text__hover-img").forEach((text) => {
-        text.removeEventListener("mouseenter", () => {
-          if (text.classList.contains("text__color-mask-yellow")) {
-            console.log("yellow");
-          } else if (text.classList.contains("text__color-mask-pink")) {
-            console.log("pink");
-          } else if (text.classList.contains("text__color-mask-blue")) {
-            console.log("blue");
-          }
-        });
-        text.removeEventListener("mouseleave", () => {
-          if (text.classList.contains("text__color-mask-yellow")) {
-            console.log("yellow");
-          } else if (text.classList.contains("text__color-mask-pink")) {
-            console.log("pink");
-          } else if (text.classList.contains("text__color-mask-blue")) {
-            console.log("blue");
-          }
-        });
-      });
+      // console.log("off");
+      //
+      document
+        .querySelector(".text__color-mask-blue")
+        .removeEventListener("mouseenter", handleTextHoverEnterB);
+      document
+        .querySelector(".text__color-mask-blue")
+        .removeEventListener("mouseleave", handleTextHoverLeave);
+      document
+        .querySelector(".text__color-mask-blue")
+        .removeEventListener("mousemove", handleTextHoverMove);
+      //
+      document
+        .querySelector(".text__color-mask-yellow")
+        .removeEventListener("mouseenter", handleTextHoverEnterY);
+      document
+        .querySelector(".text__color-mask-yellow")
+        .removeEventListener("mouseleave", handleTextHoverLeave);
+      document
+        .querySelector(".text__color-mask-yellow")
+        .removeEventListener("mousemove", handleTextHoverMove);
+      //
+      document
+        .querySelector(".text__color-mask-pink")
+        .removeEventListener("mouseenter", handleTextHoverEnterP);
+      document
+        .querySelector(".text__color-mask-pink")
+        .removeEventListener("mouseleave", handleTextHoverLeave);
+      document
+        .querySelector(".text__color-mask-pink")
+        .removeEventListener("mousemove", handleTextHoverMove);
+      //
     }
   },
   { threshold: 0.1 }
 );
 
 ethosScrollObserver.observe(document.getElementById("section__ethos"));
+
+function handleTextHoverEnterB() {
+  const textHoverImg = document.createElement("div");
+  textHoverImg.classList.add("test-img");
+  textHoverImg.classList.add("test-img-blue");
+  document.getElementById("section__ethos").append(textHoverImg);
+}
+
+function handleTextHoverEnterY() {
+  const textHoverImg = document.createElement("div");
+  textHoverImg.classList.add("test-img");
+  textHoverImg.classList.add("test-img-yellow");
+  document.getElementById("section__ethos").append(textHoverImg);
+}
+
+function handleTextHoverEnterP() {
+  const textHoverImg = document.createElement("div");
+  textHoverImg.classList.add("test-img");
+  textHoverImg.classList.add("test-img-pink");
+  document.getElementById("section__ethos").append(textHoverImg);
+}
+
+function handleTextHoverLeave() {
+  document.querySelectorAll(".test-img").forEach((el) => {
+    el.remove();
+  });
+}
+
+function handleTextHoverMove(e) {
+  var rect = document.getElementById("section__ethos").getBoundingClientRect();
+  var x = e.clientX - rect.left;
+  var y = e.clientY - rect.top;
+  // console.log(rect.top, rect.left, x, y);
+  document.querySelector(".test-img").style.left = `${x + 20}px`;
+  document.querySelector(".test-img").style.top = `${y - 370}px`;
+}

@@ -201,23 +201,6 @@
 }
 // SECTIONS=================================================
 
-// ETHOS---------
-.section__ethos {
-  overflow-x: hidden;
-}
-
-.section__ethos-article {
-  color: $color__main-black;
-  font-size: 58px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 130%;
-  grid-row: 2/13;
-  grid-column: 1/13;
-  align-self: center;
-  justify-self: center;
-}
-
 // PRODUCTS---------
 .section__products {
   width: 100%;
@@ -342,6 +325,13 @@
   background-color: transparent;
   border: none;
 }
+
+.section__products-tab-button:hover,
+.section__products-tab-button:focus {
+  transition: all ease 250ms;
+  font-weight: 800;
+}
+
 .section__products-tab-button--active {
   font-weight: 800;
   color: $color__main-black;
@@ -349,37 +339,56 @@
 .section__products-tab-indicator--active {
   background-color: $color__main-black;
 }
+
+// ETHOS---------
+.section__ethos {
+  // overflow: hidden;
+}
+
+.section__ethos-article {
+  color: $color__main-black;
+  font-size: 58px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  grid-row: 2/13;
+  grid-column: 1/13;
+  align-self: center;
+  justify-self: center;
+  position: relative;
+}
+
+.test-img-yellow {
+  width: 450px;
+  height: 350px;
+  border-radius: 10px;
+  background-image: url("http://localhost/aeriz2023/wp-content/uploads/2023/07/Claybeads.gif");
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+}
+.test-img-pink {
+  width: 450px;
+  height: 350px;
+  border-radius: 10px;
+  background-image: url("http://localhost/aeriz2023/wp-content/uploads/2023/07/sesame-street-water.gif");
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+}
+.test-img-blue {
+  width: 450px;
+  height: 350px;
+  border-radius: 10px;
+  background-image: url("http://localhost/aeriz2023/wp-content/uploads/2023/07/Grow1.gif");
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+}
+
 // BLOG --------
 .section__blog {
   background-color: $color__background-gray;
   width: 100%;
   overflow-x: hidden;
-}
-
-.test-img-yellow {
-  width: 250px;
-  height: 250px;
-  border-radius: 10px;
-  background-color: rgb(235, 243, 21);
-  position: absolute;
-}
-.test-img-pink {
-  width: 250px;
-  height: 250px;
-  border-radius: 10px;
-  background-color: rgb(207, 60, 204);
-  position: absolute;
-}
-.test-img-blue {
-  width: 250px;
-  height: 250px;
-  border-radius: 10px;
-  background-color: rgb(43, 45, 166);
-  position: absolute;
-}
-
-.text__color-mask-yellow,
-.text__color-mask-blue,
-.text__color-mask-pink {
-  position: relative;
 }
