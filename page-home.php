@@ -80,6 +80,7 @@ Template Post Type: page
                 <li><button data-tab-id="7"  class="section__products-tab-button tab--deactivate" role="tab" aria-controls="tab-7" aria-selected="false" aria-current="false">Full Spectrum Hash Drops</button></li>
               </ul>
                 <div class="section__products-carousel-content">
+                  <div class="section__products-carousel-content-mask"></div>
                   <div class="products-carousel-container">
                     <div data-product-id="1" class="product-carousel-content product_carousel-spotlight ">
                       <a class="product-carousel-links tab--deactivate" tabIndex="0" href="">

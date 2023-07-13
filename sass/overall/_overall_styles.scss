@@ -54,6 +54,7 @@ html {
 }
 // SECTION DEFAULTS -
 .section__default {
+  position: relative;
   height: fit-content;
   min-height: calc(100vh - $header_default_size);
   width: 100%;

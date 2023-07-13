@@ -333,34 +333,44 @@ const ethosScrollObserver = new IntersectionObserver(
   (entries) => {
     if (entries[0].isIntersecting) {
       console.log("on");
+
       document.querySelectorAll(".text__hover-img").forEach((text) => {
+        var textHoverImg;
         var movement = false;
-        text.addEventListener("mouseenter", (e) => {
+        text.addEventListener("mouseenter", () => {
           movement = true;
+          textHoverImg = document.createElement("div");
+          textHoverImg.classList.add("test-img");
+          document.getElementById("section__ethos").append(textHoverImg);
           if (text.classList.contains("text__color-mask-yellow")) {
-            console.log("yellow");
+            textHoverImg.classList.add("test-img-yellow");
           } else if (text.classList.contains("text__color-mask-pink")) {
-            console.log("pink");
+            textHoverImg.classList.add("test-img-pink");
           } else if (text.classList.contains("text__color-mask-blue")) {
-            console.log("blue");
+            textHoverImg.classList.add("test-img-blue");
           }
         });
         text.addEventListener("mouseleave", () => {
           movement = false;
+          document.querySelectorAll(".test-img").forEach((el) => {
+            el.remove();
+          });
           if (text.classList.contains("text__color-mask-yellow")) {
-            console.log("yellow");
+            console.log("end yellow");
           } else if (text.classList.contains("text__color-mask-pink")) {
-            console.log("pink");
+            console.log("end pink");
           } else if (text.classList.contains("text__color-mask-blue")) {
-            console.log("blue");
+            console.log("end blue");
           }
         });
         text.addEventListener("mousemove", (e) => {
-          console.log(movement);
           if (movement === true) {
             var x = e.clientX;
             var y = e.clientY;
-            console.log(x, y);
+
+            console.log(x, y, text.offsetTop, text.offsetLeft);
+            document.querySelector(".test-img").style.left = `${x}px`;
+            document.querySelector(".test-img").style.top = `${y}px`;
           }
         });
       });
